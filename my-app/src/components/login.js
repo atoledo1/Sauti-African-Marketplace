@@ -3,7 +3,7 @@ import axiosAuth from "../util/axios";
 import {useHistory} from "react-router-dom";
 import {Link} from "react-router-dom";
 import * as yup from "yup";
-import "./form.css";
+
 
 const initialFormL = {
   username: "",
