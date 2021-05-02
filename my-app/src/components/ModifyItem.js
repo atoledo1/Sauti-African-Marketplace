@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {PRODUCTS_PATH} from "../utils/URLs";
 import {useHistory, useParams} from "react-router-dom";
+import {Button} from 'antd';
 
 const ModifyItem = () => {
   const initialFormValues = {
@@ -122,8 +123,8 @@ const ModifyItem = () => {
               onChange={onChange}
             />
           </label>
-          <button onClick={editListing}> Save Changes</button>
-          <button onClick={deleteListing}>Delete Product</button>
+          <Button onClick={editListing}> Save Changes</Button>
+          <Button onClick={deleteListing}>Delete Product</Button>
         </form>
       </div>
     </>

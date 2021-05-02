@@ -7,7 +7,7 @@ import Register from "./components/Register";
 import AddItem from "./components/AddItem";
 import ModifyItem from "./components/ModifyItem";
 import PrivateRoute from "./components/PrivateRoute";
-
+import 'antd/dist/antd.css'; 
 import "./App.css";
 import MyListings from "./components/MyProfile";
 
@@ -24,7 +24,7 @@ function App() {
   return (
     <UserContext.Provider value={{user, setUser}}>
       <div className="App">
-        <h1 className="title">African Marketplace</h1>
+        <h1>African Marketplace</h1>
 
         <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Switch>

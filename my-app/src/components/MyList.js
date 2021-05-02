@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {useHistory} from "react-router-dom";
 
 import {UserContext} from "../App";
-
+import {Button} from 'antd';
 const MyProducts = (props) => {
   const {push} = useHistory();
   const {user} = useContext(UserContext);
@@ -22,7 +22,7 @@ const MyProducts = (props) => {
       <div>Location: {props.item.country}</div>
 
       {user.id === props.item.user_id && (
-        <button onClick={modifyItem}>Edit</button>
+        <Button onClick={modifyItem}>Edit</Button>
       )}
     </div>
   );

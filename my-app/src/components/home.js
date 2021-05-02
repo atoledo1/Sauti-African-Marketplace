@@ -3,6 +3,7 @@ import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {useHistory} from "react-router-dom";
 import {PRODUCTS_PATH, USERS_PATH} from "../utils/URLs";
 import {UserContext} from "../App";
+import {Button} from 'antd';
 
 import Listing from "./Listing";
 
@@ -65,9 +66,9 @@ const Home = () => {
         return <Listing key={item.id} item={item} userList={userList} />;
       })}
       <div>
-        <button className="btn" onClick={addItem}>
+        <Button  onClick={addItem}>
           Add Product
-        </button>
+        </Button>
       </div>
     </div>
   );

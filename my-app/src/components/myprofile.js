@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {useHistory, useParams} from "react-router-dom";
 import {NEW_ITEM_PATH} from "../utils/URLs";
-
+import {Button} from 'antd';
 import MyProducts from "./MyList";
 
 const MyListings = (props) => {
@@ -33,7 +33,7 @@ const MyListings = (props) => {
         <MyProducts key={item.id} item={item} />
       ))}
       <div>
-        <button onClick={addItem}>Add Product</button>
+        <Button onClick={addItem}>Add Product</Button>
       </div>
     </div>
   );

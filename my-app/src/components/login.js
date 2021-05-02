@@ -5,7 +5,9 @@ import loginSchema from "../LoginShema";
 import axios from "axios";
 import {UserContext} from "../App";
 import {BASE_URL, LOGIN_PATH} from "../utils/URLs";
+
 import "../App.css";
+import {Button} from 'antd';
 
 const LogForm = {
   username: "",
@@ -77,9 +79,9 @@ function Login(props) {
             onChange={handleChange}
           />
         </label>
-        <button className="btn" id="logbtn">
+        <Button className="btn" id="logbtn">
           Log in
-        </button>
+        </Button>
       </form>
     </div>
   );

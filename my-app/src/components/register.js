@@ -6,6 +6,7 @@ import axios from "axios";
 import {BASE_URL, REGISTER_PATH} from "../utils/URLs";
 import "../App.css";
 
+import {Button} from 'antd';
 const initialForm = {
   username: "",
   email: "",
@@ -79,7 +80,7 @@ function Register() {
             onChange={handleChange}
           />
         </label>
-        <button>Register</button>
+        <Button>Register</Button>
       </form>
     </div>
   );

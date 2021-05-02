@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import {UserContext} from "../App";
 import {useHistory} from "react-router-dom";
+import {Button} from 'antd';
 
 const ProductsList = (props) => {
   const {push} = useHistory();
@@ -15,7 +16,7 @@ const ProductsList = (props) => {
   };
 
   return (
-    <div className="item-card">
+    <div >
       <div>Product: {props.item.product_name}</div>
       <div>Price: {props.item.product_price}</div>
       <div>Quantity: {props.item.product_quantity}</div>
@@ -25,7 +26,7 @@ const ProductsList = (props) => {
       <div>Location: {props.item.country}</div>
       <div>Seller: {seller[0].username}</div>
       {user.id === props.item.user_id && (
-        <button onClick={modifyItem}>Edit</button>
+        <Button onClick={modifyItem}>Edit</Button>
       )}
     </div>
   );
