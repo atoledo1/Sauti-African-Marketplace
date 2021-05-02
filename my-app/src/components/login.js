@@ -27,11 +27,9 @@ function Login(props) {
     loginSchema
       .validate(form, {abortEarly: false})
       .then((res) => {
-        // console.log(res)
         axios
           .post(`${BASE_URL}${LOGIN_PATH}`, form)
           .then((res) => {
-            // console.log(res);
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("username", form.username);
             props.setLoggedIn(true);
