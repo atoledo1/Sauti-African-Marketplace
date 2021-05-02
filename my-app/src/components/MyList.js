@@ -4,10 +4,8 @@ import {useHistory} from "react-router-dom";
 import {UserContext} from "../App";
 
 const MyProducts = (props) => {
- 
   const {push} = useHistory();
   const {user} = useContext(UserContext);
-  
 
   const modifyItem = () => {
     push(`/modify-item/${props.item.id}`);
@@ -22,7 +20,7 @@ const MyProducts = (props) => {
       <div>Description: {props.item.product_description}</div>
       <div>Market: {props.item.market_name}</div>
       <div>Location: {props.item.country}</div>
-      
+
       {user.id === props.item.user_id && (
         <button onClick={modifyItem}>Edit</button>
       )}

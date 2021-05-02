@@ -11,7 +11,7 @@ function Navigation(props) {
   return (
     <>
       {props.loggedIn ? (
-        <div className="nav">
+        <div>
           <NavLink to="/home">Home</NavLink>
           <NavLink to="/mylistings"> My Listings</NavLink>
           <NavLink to="/login" onClick={logout}>
