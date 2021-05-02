@@ -3,9 +3,12 @@ import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {useHistory} from "react-router-dom";
 import {PRODUCTS_PATH, USERS_PATH} from "../utils/URLs";
 import {UserContext} from "../App";
-import {Button} from 'antd';
 
-import Listing from "./Listing";
+import {  Button} from 'antd';
+
+
+import Listings from "./Listing";
+
 
 const Home = () => {
   const {push} = useHistory();
@@ -61,14 +64,14 @@ const Home = () => {
 
   return (
     <div>
-      <h2>All Products</h2>
+      <h2>All Products <Button  onClick={addItem}>
+          Add Product
+        </Button></h2>
       {itemsForSale.map((item) => {
-        return <Listing key={item.id} item={item} userList={userList} />;
+        return <Listings key={item.id} item={item} userList={userList} />;
       })}
       <div>
-        <Button  onClick={addItem}>
-          Add Product
-        </Button>
+        
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {NEW_ITEM_PATH} from "../utils/URLs";
 import {useHistory} from "react-router-dom";
 import {UserContext} from "../App";
+import{Button} from 'antd'
 
 const AddItem = () => {
   const initialFormValues = {
@@ -46,10 +47,10 @@ const AddItem = () => {
 
   return (
     <>
-      <h2 className="change-title">Create a New Listing</h2>
-      <div className="list">
+      <h2 >Create a New Listing</h2>
+      <div >
         <form onSubmit={onSubmit}>
-          <label className="item">
+          <label >
             Product Name:
             <input
               type="text"
@@ -58,7 +59,7 @@ const AddItem = () => {
               onChange={onChange}
             />
           </label>
-          <label className="item">
+          <label >
             Price:$
             <input
               type="text"
@@ -67,7 +68,7 @@ const AddItem = () => {
               onChange={onChange}
             />
           </label>
-          <label className="item">
+          <label >
             Quantity:
             <input
               type="text"
@@ -76,7 +77,7 @@ const AddItem = () => {
               onChange={onChange}
             />
           </label>
-          <label className="item">
+          <label >
             Product Category:
             <input
               type="text"
@@ -85,7 +86,7 @@ const AddItem = () => {
               onChange={onChange}
             />
           </label>
-          <label className="item">
+          <label >
             Product Description:
             <input
               type="text"
@@ -94,7 +95,7 @@ const AddItem = () => {
               onChange={onChange}
             />
           </label>
-          <label className="item">
+          <label >
             Country:
             <input
               type="text"
@@ -103,7 +104,7 @@ const AddItem = () => {
               onChange={onChange}
             />
           </label>
-          <label className="item">
+          <label >
             Market Name:
             <input
               type="text"
@@ -112,7 +113,7 @@ const AddItem = () => {
               onChange={onChange}
             />
           </label>
-          <button className="sale-btn">Add Product</button>
+          <Button className="sale-btn">Add Product</Button>
         </form>
       </div>
     </>

@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
 import {UserContext} from "../App";
 import {useHistory} from "react-router-dom";
-import {Button} from 'antd';
+import {Button,Card} from 'antd';
 
-const ProductsList = (props) => {
+const Listings = (props) => {
   const {push} = useHistory();
   const {user} = useContext(UserContext);
 
@@ -14,10 +14,47 @@ const ProductsList = (props) => {
   const modifyItem = () => {
     push(`/modify-item/${props.item.id}`);
   };
+  const gridStyle = {
+    width: '100',
+    textAlign: 'center',
+   
+    
+  };
+  const { Meta } = Card;
 
   return (
-    <div >
-      <div>Product: {props.item.product_name}</div>
+
+
+    
+   
+
+<>
+
+    
+<Card title={props.item.product_name}style={{}}
+extra={seller[0].username}
+        
+   
+      
+actions={[
+user.id === props.item.user_id && (<Button onClick={modifyItem}>Edit</Button>)]}>
+    
+        
+        <Card.Grid style={gridStyle}>Price: {props.item.product_price}</Card.Grid>
+        <Card.Grid style={gridStyle}>Quantity: {props.item.product_quantity}</Card.Grid>
+        <Card.Grid style={gridStyle}>Category: {props.item.product_category}</Card.Grid>
+        <Card.Grid style={gridStyle}>Description: {props.item.product_description}</Card.Grid>
+        <Card.Grid style={gridStyle}>Market: {props.item.market_name}</Card.Grid>
+        <Card.Grid style={gridStyle}>Location: {props.item.country}</Card.Grid>
+        
+       
+      </Card>
+      </>
+
+ 
+
+
+      /* <div>Product: {props.item.product_name}</div>
       <div>Price: {props.item.product_price}</div>
       <div>Quantity: {props.item.product_quantity}</div>
       <div>Category: {props.item.product_category}</div>
@@ -27,9 +64,9 @@ const ProductsList = (props) => {
       <div>Seller: {seller[0].username}</div>
       {user.id === props.item.user_id && (
         <Button onClick={modifyItem}>Edit</Button>
-      )}
-    </div>
+      )} */
+      
   );
 };
 
-export default ProductsList;
+export default Listings;

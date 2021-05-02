@@ -79,7 +79,7 @@ function Login(props) {
             onChange={handleChange}
           />
         </label>
-        <Button className="btn" id="logbtn">
+        <Button htmlType="submit">
           Log in
         </Button>
       </form>

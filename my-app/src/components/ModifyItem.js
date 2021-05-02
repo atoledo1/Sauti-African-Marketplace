@@ -123,8 +123,8 @@ const ModifyItem = () => {
               onChange={onChange}
             />
           </label>
-          <Button onClick={editListing}> Save Changes</Button>
-          <Button onClick={deleteListing}>Delete Product</Button>
+          <Button onClick={editListing}htmlType="submit"> Save Changes</Button>
+          <Button onClick={deleteListing}htmlType="submit">Delete Product</Button>
         </form>
       </div>
     </>
