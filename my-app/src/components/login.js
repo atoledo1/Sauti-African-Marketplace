@@ -1,118 +1,73 @@
-import React, {useState, useContext} from "react";
-import {useHistory} from "react-router-dom";
-import * as yup from "yup";
-import axiosAuth from "../util/axios";
-import {UserContext} from "../App";
-import {BASE_URL, LOGIN_PATH} from "../util/api";
+import React, { useState, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
+import * as yup from 'yup'
+import loginSchema from "../LoginShema"
+import axios from 'axios'
+import {UserContext} from '../App'
+import {BASE_URL, LOGIN_PATH} from '../utils/URLs'
+import '../App.css';
 
-const initialFormL = {
-  username: "",
-  password: "",
-};
+const LogForm = {
+    username: '',
+    password: ''
+}
 
-const initialWarningL = {
-  username: "Username is a required field",
-  password: "Password is a required field",
-};
 
-const SchemaFormL = yup.object().shape({
-  username: yup
-    .string()
-    .min(3, "Username must be at least 3 characters")
-    .required("Username is a required field"),
-  password: yup
-    .string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Password is a required field"),
-});
 
-const Login = (props) => {
-  const history = useHistory();
-  const [loginU, setloginU] = useState(initialFormL);
+function Login (props) {
+    const [form, setForm] = useState(LogForm)
+    const [errors, setErrors] = useState([]); 
+    const history = useHistory()
+    const {user, setUser} = useContext(UserContext)
+    
+    const handleChange = (e) => {
+        setForm({...form, [e.target.name]: e.target.value});
+    }
 
-  const [errorsL, seterrorsL] = useState(initialWarningL);
-  const {user, setUser} = useContext(UserContext);
-  const [buttonE, setbuttonE] = useState(false);
-
-  useEffect(() => {
-    SchemaFormL.isValid(loginU).then((valid) => {
-      setbuttonE(valid);
-    });
-  }, [loginU]);
-
-  const onChange = (e) => {
-    setloginU({...loginU, [e.target.name]: e.target.value});
-
-    yup
-      .reach(SchemaFormL, e.target.name)
-      .validate(e.target.value)
-      .then((valid) => {
-        seterrorsL({...errorsL, [e.target.name]: ""});
-      })
-      .catch((err) => {
-        seterrorsL({...errorsL, [e.target.name]: err.errors[0]});
-      });
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    axiosAuth().post(
-      (`${BASE_URL}${LOGIN_PATH}`, loginU)
-        .then((res) => {
-          localStorage.setItem("token", res.data.token);
-          localStorage.setItem("username", loginU.username);
-          props.setLoggedIn(true);
-          setUser({
-            ...user,
-            username: loginU.username,
-          });
-          setloginU(initialFormL);
-          history.push("/");
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        loginSchema.validate(form, {abortEarly: false})
+        .then(res => {
+            // console.log(res)
+            axios.post(`${BASE_URL}${LOGIN_PATH}`, form)
+            .then(res => {
+                // console.log(res);
+                localStorage.setItem('token', res.data.token)
+                localStorage.setItem('username', form.username)
+                props.setLoggedIn(true);
+                setUser({
+                    ...user,
+                    username: form.username
+                })
+                setForm(LogForm)
+                history.push('/home')
+            })
+            .catch(err => {
+                console.dir(err)
+                setErrors([...errors, {message:'Invalid Login'}]);
+            })
         })
-        .catch((err) => {
-          console.dir(err);
-          setErrors([...errors, {message: "Invalid Login"}]);
+        .catch(err => {
+            console.log(err);
+            setErrors([...err.inner]);
         })
-    );
-  };
-  return (
-    <div className="containerbig">
-      <div className="container">
-        <h1>Log in</h1>
-        <form onSubmit={onSubmit}>
-          <div className="form">
-            <label className="label1">Username:</label>
-            <input
-              placeholder="Write username here"
-              onChange={onChange}
-              type="textbox"
-              name="username"
-              value={loginU.username}
-            />
-
-            <label className="label1">Password:&nbsp;</label>
-            <input
-              placeholder="Write password here"
-              onChange={onChange}
-              type="password"
-              name="password"
-              value={loginU.password}
-            />
-
-            <button className="Button" disabled={!buttonE} type="submit">
-              {" "}
-              Log in
-            </button>
-            <div> {errorsL.username} </div>
-            <div> {errorsL.password} </div>
-          </div>
-        </form>
-        <p>
-          Don't have an account? <Link to="/Register">Register</Link>{" "}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-export default Login;
+    }
+    
+    return(
+        <div className='log-container'> 
+            <form onSubmit={handleSubmit}>
+                {errors.map(error =>{
+                    return <p>{error.message}</p>
+                })}  
+                <label> Username: 
+                    <input id='logname' name='username' type='textbox' onChange={handleChange}/>
+                </label>
+                <label> Password: 
+                    <input id='logpass' name='password' type='password' onChange={handleChange}/>
+                </label>
+                <button className='btn' id='logbtn'>Log in</button>
+            </form>
+        </div>
+    )
+}
+export default Login

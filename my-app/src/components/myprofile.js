@@ -1,65 +1,42 @@
-// import React, {useState, useEffect, useContext} from "react";
-// import axiosAuth from "../util/axios";
-// import AddItem from "./addProduct";
-// import {Link,useHistory} from "react-router-dom";
-// import {NEW_ITEM_PATH, USERS_PATH} from '../util/api';
-// import {UserContext} from '../App';
+import React, {useEffect, useState} from "react";
+import {axiosWithAuth} from "../utils/axiosWIthAUTH";
+import {useHistory, useParams} from "react-router-dom";
+import {NEW_ITEM_PATH} from "../utils/URLs";
 
-// const MyProfile = () => {
-//     const {push} = useHistory()
-//     const {user, setUser} = useContext(UserContext)
-//   const [myItems, setmyitems] = useState([])
-//   const [userList, setUserList] = useState([])
-  
-//     useEffect(() => {
-//         // get list of all users - single API call providing data to all children
-//         axiosAuth()
-//         .get(`${USERS_PATH}`)
-//         .then(res => {
-//             setUserList(res.data.data)
-//         })
-//         .catch(err => {
-//             console.log(err)
-//         })
-//         //set user context - uses username from localStorage if the page was reloaded
-//         let usernameSnapshot = user.username
-//         if (usernameSnapshot === '') {
-//             usernameSnapshot = localStorage.getItem('username')
-//         }
-//         axiosAuth()
-//             .get(`${USERS_PATH}`)
-//             .then(res => {
-//                 const currentUser = res.data.data.filter(u => usernameSnapshot === u.username)
-//                 const userId = currentUser[0].id
-//                 setUser({
-//                     username: usernameSnapshot,
-//                     id: userId
-//                 })
-//                 // set list of items for sale
-//                 // triggers children to mount
-//                 // children require user context to mount correctly
+import MyProducts from "./MyList";
 
-//              axiosAuth()
-//                 .get(`${NEW_ITEM_PATH}${id}`)
-//                 .then(res => {
-//                     setmyItems(res.data.data);
-//                  })
-//                 .catch(err => {
-//                 console.log("err", err);
-//                 })
-//             .catch(err => {
-//             console.log(err)
-       
+const MyListings = (props) => {
+  const {push} = useHistory();
+  const [myitems, setMyItems] = useState([]);
 
-//             })
-//         },[]
-//   )
-//     }
+  useEffect(() => {
+    axiosWithAuth()
+      .get(`${NEW_ITEM_PATH}${1}`)
+      .then((res) => {
+        console.log(res);
+        setMyItems(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  const addItem = () => {
+    push("/add-item");
+  };
 
-//   return(
-//     <div>
-            
-//     </div>
-//     )
-// }
-// export default MyProfile
+  return (
+    <div>
+      {myitems.map((item) => (
+        <MyProducts key={item.id} item={item} />
+      ))}
+      <div>
+        <button onClick={addItem}>Add Product</button>
+      </div>
+    </div>
+  );
+};
+
+export default MyListings;
