@@ -1,26 +1,37 @@
-import Login from "./component/Login";
-import Register from "./component/Register";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import routeProtected from "./util/routeProtected";
+import React, {useState} from "react";
+import {Route, Switch} from "react-router-dom";
+import Login from "./components/login";
+import Register from "./components/register";
+import RouteProtected from "./util/routeProtected";
 import Home from "./components/home";
+import AddItem from "./components/addProduct";
+// import MyProfile from "./components/myprofile";
 
+export const UserContext = React.createContext();
 
-
-const App = () => {
+function App() {
+  const [user, setUser] = useState({
+    username: "",
+    id: "",
+  });
+  const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem("token"));
   return (
-    <Router>
+    <UserContext.Provider value={{user, setUser}}>
       <div className="App">
         <p>African Marketplace</p>
-        <Route exact path="/" component={Login}></Route>
-        <Route exact path="/Register" component={Register} />
         <Switch>
-        <routeProtected exact path="/protected" component={Home} />
-   
-        
+          <Route path="/login">
+            <Login setLoggedIn={setLoggedIn} />
+          </Route>
+          <Route path="/register" component={Register} />
+
+          <RouteProtected path="/" component={Home} />
+          {/* <RouteProtected path="/myprofile" component={MyProfile} /> */}
+          <RouteProtected path="/additem" component={AddItem} />
         </Switch>
       </div>
-    </Router>
+    </UserContext.Provider>
   );
-};
+}
 
 export default App;

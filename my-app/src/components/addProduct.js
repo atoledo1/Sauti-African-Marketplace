@@ -1,46 +1,49 @@
 import React, {useState} from "react";
 import axiosAuth from "../util/axios";
 import {useHistory} from "react-router-dom";
+import { NEW_ITEM_PATH } from '../util/api'
+import {UserContext} from '../App'
 
 const AddItem = () => {
-  const {push} = useHistory();
-  const [addItem, setAddItem] = useState({
+    const initialFormValues = {
     product_name: "",
-    product_category: "",
-    product_description: "",
-    product_quantity: "",
     product_price: "",
+    product_quantity: "",
+    product_category: "",
     country: "",
     market_name: "",
-  });
+    product_description: "",
+  }
+  const {push} = useHistory()
+  const {user} = useContext(UserContext)
+  const [formValues, setFormValues] = useState(initialFormValues)
+  
+  useEffect(() => {
+    // console.log(user)
+    if (user.id === '') {
+        push('/myprofile')
+    }
+}, [])
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setAddItem({
-      ...addItem,
-      [e.target.name]: e.target.value,
-    });
-  };
+const handleChange = event => {
+    console.log(event.target)
+    setFormValues({
+        ...formValues,
+        [event.target.name]: event.target.value
+    })
+}
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
     axiosAuth()
-      .post("/market/user/:id", addItem)
-      .then((res) => {
-        setAddItem({
-          country: "",
-          market_name: "",
-          product_category: "",
-          product_description: "",
-          product_name: "",
-          product_price: "",
-          product_quantity: "",
-        });
-        if (res) {
-          push("/Home");
-        }
-      });
-  };
+        .post(`${NEW_ITEM_PATH}${user.id}`, formValues)
+        .then(res => {
+            push('/home')
+        })
+        .catch(err => console.log(err))
+}
 
   return (
     <div>
@@ -51,7 +54,7 @@ const AddItem = () => {
           <input
             type="text"
             name="product_name"
-            value={addItem.product_name}
+            value={formValues.product_name}
             onChange={handleChange}
             placeholder="Name"
           />
@@ -61,7 +64,7 @@ const AddItem = () => {
             <input
               type="text"
               name="product_price"
-              value={addItem.product_price}
+              value={formValues.product_price}
               onChange={handleChange}
               placeholder="Price"
             />
@@ -71,7 +74,7 @@ const AddItem = () => {
             <input
               type="text"
               name="product_quantity"
-              value={addItem.product_quantity}
+              value={formValues.product_quantity}
               onChange={handleChange}
               placeholder="Quantity"
             />
@@ -81,7 +84,7 @@ const AddItem = () => {
             <input
               type="text"
               name="product_category"
-              value={addItem.product_category}
+              value={formValues.product_category}
               onChange={handleChange}
               placeholder="Category"
             />
@@ -92,7 +95,7 @@ const AddItem = () => {
             <input
               type="text"
               name="country"
-              value={addItem.country}
+              value={formValues.country}
               onChange={handleChange}
               placeholder="Location"
             />
@@ -113,7 +116,7 @@ const AddItem = () => {
             <input
               type="text"
               name="product_description"
-              value={addItem.product_description}
+              value={formValues.product_description}
               onChange={handleChange}
               placeholder="Description"
             />

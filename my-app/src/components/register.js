@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
+import {useHistory} from "react-router-dom";
 import * as yup from "yup";
 import axiosAuth from "../util/axios";
-import { Link } from "react-router-dom";
-
+import {Link} from "react-router-dom";
+import {BASE_URL, REGISTER_PATH} from "../util/api";
 
 const initialFormR = {
   username: "",
@@ -27,12 +28,13 @@ const schemaFormR = yup.object().shape({
     .required("Password is a required field"),
 });
 
-const Register = (props) => {
+const Register = () => {
   const [registerU, setregisterU] = useState(initialFormR);
 
   const [ErrorsR, setErrorsR] = useState(initialWarningE);
 
   const [buttonE, setbuttonE] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     schemaFormR.isValid(registerU).then((valid) => {
@@ -41,34 +43,26 @@ const Register = (props) => {
   }, [registerU]);
 
   const onChange = (e) => {
-    e.persist();
-
-    setregisterU({ ...registerU, [e.target.name]: e.target.value });
+    setregisterU({...registerU, [e.target.name]: e.target.value});
 
     yup
       .reach(schemaFormR, e.target.name)
       .validate(e.target.value)
       .then((valid) => {
-        setErrorsR({ ...ErrorsR, [e.target.name]: "" });
+        setErrorsR({...ErrorsR, [e.target.name]: ""});
       })
       .catch((err) => {
-        setErrorsR({ ...ErrorsR, [e.target.name]: err.errors[0] });
+        setErrorsR({...ErrorsR, [e.target.name]: err.errors[0]});
       });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     axiosAuth()
-      .post(
-        "https://marketbw-api.herokuapp.com/api/auth/register",
-        registerU
-      )
+      .post(`${BASE_URL}${REGISTER_PATH}`, registerU)
       .then((res) => {
         console.log(res.data);
-        setregisterU({
-          username: "",
-          password: "",
-        });
+        history.push("/login");
       });
   };
 
@@ -78,16 +72,16 @@ const Register = (props) => {
         <h1>Register</h1>
         <form onSubmit={onSubmit}>
           <div className="form">
-            <label className="label1">Username:&nbsp;</label>
+            <label className="label1">Username:</label>
             <input
               placeholder="Write username here"
               onChange={onChange}
-              type="text"
+              type="textbox"
               name="username"
               value={registerU.username}
             />
 
-            <label className="label1">Password:&nbsp;</label>
+            <label className="label1">Password:</label>
             <input
               placeholder="Write password here"
               onChange={onChange}
@@ -97,14 +91,15 @@ const Register = (props) => {
             />
 
             <button className="Button" disabled={!buttonE} type="submit">
-              {" "}
               Register
             </button>
             <div> {ErrorsR.username} </div>
             <div> {ErrorsR.password} </div>
           </div>
         </form>
-        <p> Already have an account? <Link to="/">Log in</Link>{" "}
+        <p>
+          {" "}
+          Already have an account? <Link to="/">Log in</Link>{" "}
         </p>
       </div>
     </div>

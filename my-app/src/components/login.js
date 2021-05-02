@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react";
-import axiosAuth from "../util/axios";
+import React, {useState, useContext} from "react";
 import {useHistory} from "react-router-dom";
-import {Link} from "react-router-dom";
 import * as yup from "yup";
-
+import axiosAuth from "../util/axios";
+import {UserContext} from "../App";
+import {BASE_URL, LOGIN_PATH} from "../util/api";
 
 const initialFormL = {
   username: "",
@@ -31,7 +31,7 @@ const Login = (props) => {
   const [loginU, setloginU] = useState(initialFormL);
 
   const [errorsL, seterrorsL] = useState(initialWarningL);
-
+  const {user, setUser} = useContext(UserContext);
   const [buttonE, setbuttonE] = useState(false);
 
   useEffect(() => {
@@ -41,8 +41,6 @@ const Login = (props) => {
   }, [loginU]);
 
   const onChange = (e) => {
-    e.persist();
-
     setloginU({...loginU, [e.target.name]: e.target.value});
 
     yup
@@ -58,30 +56,36 @@ const Login = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axiosAuth()
-      .post("https://marketbw-api.herokuapp.com/api/auth/login", loginU)
-      .then((res) => {
-        localStorage.setItem("token", res.data.token);
-        history.push("/protected");
-      })
-      .catch((err) => console.log(err));
-    setloginU({
-      username: "",
-      password: "",
-    });
+    axiosAuth().post(
+      (`${BASE_URL}${LOGIN_PATH}`, loginU)
+        .then((res) => {
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("username", loginU.username);
+          props.setLoggedIn(true);
+          setUser({
+            ...user,
+            username: loginU.username,
+          });
+          setloginU(initialFormL);
+          history.push("/");
+        })
+        .catch((err) => {
+          console.dir(err);
+          setErrors([...errors, {message: "Invalid Login"}]);
+        })
+    );
   };
-
   return (
     <div className="containerbig">
       <div className="container">
         <h1>Log in</h1>
         <form onSubmit={onSubmit}>
           <div className="form">
-            <label className="label1">Username:&nbsp;</label>
+            <label className="label1">Username:</label>
             <input
               placeholder="Write username here"
               onChange={onChange}
-              type="text"
+              type="textbox"
               name="username"
               value={loginU.username}
             />
