@@ -32,14 +32,14 @@ const Listings = (props) => {
 
     
 <Card title={props.item.product_name}style={{}}
-extra={seller[0].username}
+cover={`Seller:  ${seller[0].username}`}
+
         
    
       
 actions={[
 user.id === props.item.user_id && (<Button onClick={modifyItem}>Edit</Button>)]}>
     
-        
         <Card.Grid style={gridStyle}>Price: {props.item.product_price}</Card.Grid>
         <Card.Grid style={gridStyle}>Quantity: {props.item.product_quantity}</Card.Grid>
         <Card.Grid style={gridStyle}>Category: {props.item.product_category}</Card.Grid>

@@ -4,7 +4,7 @@ import {useHistory} from "react-router-dom";
 import {PRODUCTS_PATH, USERS_PATH} from "../utils/URLs";
 import {UserContext} from "../App";
 
-import {  Button} from 'antd';
+import { Space, Button} from 'antd';
 
 
 import Listings from "./Listing";
@@ -64,15 +64,19 @@ const Home = () => {
 
   return (
     <div>
+        <Space direction="horizontal" size="large">
+      
       <h2>All Products <Button  onClick={addItem}>
           Add Product
         </Button></h2>
+        </Space>
       {itemsForSale.map((item) => {
         return <Listings key={item.id} item={item} userList={userList} />;
       })}
       <div>
         
       </div>
+      
     </div>
   );
 };

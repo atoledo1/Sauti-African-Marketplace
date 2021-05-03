@@ -7,7 +7,7 @@ import {UserContext} from "../App";
 import {BASE_URL, LOGIN_PATH} from "../utils/URLs";
 
 import "../App.css";
-import {Button} from 'antd';
+import {Button} from "antd";
 
 const LogForm = {
   username: "",
@@ -60,7 +60,6 @@ function Login(props) {
           return <p>{error.message}</p>;
         })}
         <label>
-          {" "}
           Username:
           <input
             id="logname"
@@ -79,9 +78,7 @@ function Login(props) {
             onChange={handleChange}
           />
         </label>
-        <Button htmlType="submit">
-          Log in
-        </Button>
+        <Button htmlType="submit">Log in</Button>
       </form>
     </div>
   );
