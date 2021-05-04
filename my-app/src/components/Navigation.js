@@ -1,5 +1,5 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import "../App.css";
 import { Menu } from 'antd';
 import MenuItem from "antd/lib/menu/MenuItem";
@@ -12,35 +12,37 @@ function Navigation(props) {
     props.setLoggedIn(false);
   };
   return (
-    <>
+      
+    
     <Menu  mode="horizontal">
-        
+       <>
       {props.loggedIn ? (
-        <div>
+        <>
             <Menu.Item >
-          <NavLink to="/home">Home</NavLink>
+          <Link to="/home">Home</Link>
           </Menu.Item>
           <Menu.Item >
-          <NavLink to="/mylistings"> My Listings</NavLink>
+          <Link to="/mylistings"> My Listings</Link>
           </Menu.Item>
           <Menu.Item>
-          <NavLink to="/login" onClick={logout}>
+          <Link to="/login" onClick={logout}>
             Log Out
-          </NavLink>
+          </Link>
           </Menu.Item>
-        </div>
+        </>
       ) : (
-        <div>
+      <>
             <Menu.Item>
-          <NavLink to="/register">Register</NavLink>
+          <Link to="/register">Register</Link>
           </Menu.Item>
-          <MenuItem>
-          <NavLink to="/login">Log In</NavLink>
-          </MenuItem>
-        </div>
+          <Menu.Item>
+          <Link to="/login">Log In</Link>
+          </Menu.Item>
+          </>
       )}
+      </>
       </Menu>
-    </>
+    
   );
 }
 export default Navigation;
