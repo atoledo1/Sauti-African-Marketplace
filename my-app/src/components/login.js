@@ -58,7 +58,7 @@ function Login(props) {
   return (
 
 
-      <Form  style={{ width:"26%", margin:"25px"}} name="login" className="login-form" initialValues={{ remember: true }} onFinish={handleSubmit}>
+      <Form  style={{ width:"26%", margin:"25px"}}  layout="vertical" name="login" className="login-form" initialValues={{ remember: true }} onFinish={handleSubmit}>
        
         <Form.Item rules={[{ required: true, message: 'Please input your Username!' }]}label="Username">
           <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username"

@@ -6,11 +6,12 @@ import axios from "axios";
 import {BASE_URL, REGISTER_PATH} from "../utils/URLs";
 import "../App.css";
 
-import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
-import {Form, Input, Button} from "antd";
+import {UserOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
+import {Form, Input, Button, Space} from "antd";
 const initialForm = {
-  username: "",
   email: "",
+  username: "",
+
   password: "",
 };
 
@@ -31,40 +32,54 @@ function Register() {
   };
 
   return (
-    <Form style={{width: "26%", margin: "25px"}} onFinish={handleSubmit}>
-      <Form.Item rules={[
+    <Form style={{width: "25%", margin:"25px"}} layout="vertical">
+      <Form.Item
+        rules={[
           {
             required: true,
-            message: 'Please input your username!',
-           
+            message: "Please input your E-mail!",
           },
-        ]} label="Username">
+        ]}
+        label="Email"
+      >
+        <Input
+          id="mail"
+          name="email"
+          type="email"
+          onChange={handleChange}
+          prefix={<MailOutlined className="site-form-item-icon" />}
+          placeholder="Email"
+        />
+      </Form.Item>
+
+      <Form.Item
+        rules={[
+          {
+            required: true,
+            message: "Please input your username!",
+          },
+        ]}
+        label="Username"
+      >
         <Input
           id="name"
           name="username"
           type="textbox"
           onChange={handleChange}
-          prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username"
+          prefix={<UserOutlined className="site-form-item-icon" />}
+          placeholder="Username"
         />
       </Form.Item>
-      <Form.Item rules={[
-          {
-            type: 'email',
-            message: 'The input is not valid E-mail!',
-          },
+
+      <Form.Item
+        rules={[
           {
             required: true,
-            message: 'Please input your E-mail!',
+            message: "Please input your password!",
           },
-        ]}label="Email">
-        <Input prefix={<MailOutlined className="site-form-item-icon" />} placeHolder="email" id="mail" name="email" type="email" onChange={handleChange} />
-      </Form.Item>
-      <Form.Item  rules={[
-          {
-            required: true,
-            message: 'Please input your password!',
-          },
-        ]}label="Password">
+        ]}
+        label="Password"
+      >
         <Input.Password
           id="pass"
           name="password"
@@ -75,7 +90,9 @@ function Register() {
         />
       </Form.Item>
       <Form.Item>
-        <Button  type="primary" htmlType="submit">Register</Button>
+        <Button type="primary" htmlType="submit">
+          Register
+        </Button>
       </Form.Item>
     </Form>
   );
