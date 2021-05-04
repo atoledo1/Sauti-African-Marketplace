@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {useHistory} from "react-router-dom";
 
 import {UserContext} from "../App";
-import {Button, Table, Typography } from 'antd';
+import {Button,  Typography } from 'antd';
 
 
 const MyProducts = (props) => {

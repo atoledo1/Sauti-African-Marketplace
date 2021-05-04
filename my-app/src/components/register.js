@@ -23,66 +23,51 @@ function Register() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    registerSchema
-      .validate(form, {abortEarly: false})
-      .then((res) => {
+  
         axios
           .post(`${BASE_URL}${REGISTER_PATH}`, form)
           .then((res) => {
             console.log(res.data.data.password);
             history.push("/login");
           })
-          .catch((err) => {
-            console.log(err);
-            setErrors([...errors, {message: "Username is already taken"}]);
-          });
-      })
-      .catch((err) => {
-        console.dir(err);
-        setErrors([...err.inner]);
-      });
+          
   };
 
   return (
-    <div className="reg-container">
-      <Form onSubmit={handleSubmit}>
-        {errors.map((error) => {
-          return <p>{error.message}</p>;
-        })}
-        <label>
-          {" "}
-          Username:
-          <input
+    
+      <Form onFinish={handleSubmit}>
+       <Form.Item label="Username">
+          <Input
             id="name"
             name="username"
             type="textbox"
             onChange={handleChange}
           />
-        </label>
-        <label>
-          {" "}
-          Email:
-          <input
+          </Form.Item>
+      <Form.Item label="Email">
+         
+         
+          <Input
             id="mail"
             name="email"
-            type="textbox"
+            type="email"
             onChange={handleChange}
           />
-        </label>
-        <label>
-          {" "}
-          Password:
-          <input
+      </Form.Item>
+      <Form.Item label="Password">
+          
+          <Input
             id="pass"
             name="password"
             type="password"
             onChange={handleChange}
           />
-        </label>
+      </Form.Item>
+      <Form.Item>
         <Button htmlType="submit">Register</Button>
+        </Form.Item>
       </Form>
-    </div>
+   
   );
 }
 export default Register;

@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {UserContext} from "../App";
 import {useHistory} from "react-router-dom";
-import {Button,Card} from 'antd';
+import {Button,Card, Divider} from 'antd';
 
 const Listings = (props) => {
   const {push} = useHistory();
@@ -46,6 +46,7 @@ user.id === props.item.user_id && (<Button onClick={modifyItem}>Edit</Button>)]}
         <Card.Grid style={gridStyle}>Description: {props.item.product_description}</Card.Grid>
         <Card.Grid style={gridStyle}>Market: {props.item.market_name}</Card.Grid>
         <Card.Grid style={gridStyle}>Location: {props.item.country}</Card.Grid>
+        <Divider/>
         
        
       </Card>
