@@ -70,7 +70,7 @@ function Login(props) {
           </Form.Item>
      
         <Form.Item rules={[{ required: true, message: 'Please input your Password!' }]}label="Password">
-          <Input   prefix={<LockOutlined className="site-form-item-icon" />}
+          <Input.Password   prefix={<LockOutlined className="site-form-item-icon" />}
             id="logpass"
             name="password"
             type="password"
