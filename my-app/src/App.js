@@ -7,7 +7,7 @@ import Register from "./components/Register";
 import AddItem from "./components/AddItem";
 import ModifyItem from "./components/ModifyItem";
 import PrivateRoute from "./components/PrivateRoute";
-import "antd/dist/antd.dark.css";
+import "antd/dist/antd.css";
 import "./App.css";
 import MyListings from "./components/MyProfile";
 

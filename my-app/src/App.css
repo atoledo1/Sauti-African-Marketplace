@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.dark.css';
+@import '~antd/dist/antd.css';
 /* .App {
   text-align: center;
 }
@@ -37,4 +37,9 @@
     transform: rotate(360deg);
   }
 } */
+
+
+/* background-color: #00b5c2;
+background-image: url("https://www.transparenttextures.com/patterns/rough-cloth-light.png");
+This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 

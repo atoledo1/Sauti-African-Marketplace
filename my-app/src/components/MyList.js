@@ -2,7 +2,10 @@ import React, {useContext} from "react";
 import {useHistory} from "react-router-dom";
 
 import {UserContext} from "../App";
-import {Button,  Typography } from 'antd';
+import {Button, Divider,Card, Layout } from 'antd'; 
+import Title from "antd/lib/skeleton/Title";
+
+
 
 
 const MyProducts = (props) => {
@@ -13,56 +16,58 @@ const MyProducts = (props) => {
     push(`/modify-item/${props.item.id}`);
   };
 
-  const { Text } = Typography;
   
-  const columns = [
-    {
-      title:"Product",
-      dataIndex:`${props.item.product_name}`,
-    },
-    {
-      title: 'Price',
-      dataIndex: 'borrow',
-    },
-    {
-      title: 'Quantity',
-      dataIndex: 'repayment',
-    },
-    {
-        title: 'Category',
-        dataIndex: `${props.item.product_category}`,
-      },
-      {
-        title: 'Description',
-        dataIndex: `${props.item.product_description}`,
-      },
-      {
-        title: 'Market',
-        dataIndex: `${props.item.market_name}`,
-      },
-      {
-        title: 'Location',
-        dataIndex: `${props.item.country}`,
-      },
-  ];
+  const gridStyle = {
+    width: '100',
+    textAlign: 'center',
+   
+    
+  };
+  const { Meta } = Card;
 
   return (
-    <div>
-        
-      <div>Product: {props.item.product_name}</div>
-      <div>Price: {props.item.product_price}</div>
-      <div>Quantity: {props.item.product_quantity}</div>
-      <div>Category: {props.item.product_category}</div>
-      <div>Description: {props.item.product_description}</div>
-      <div>Market: {props.item.market_name}</div>
-      <div>Location: {props.item.country}</div>
 
-      {user.id === props.item.user_id && (
-        <Button onClick={modifyItem}>Edit</Button>
-      )}
+
+    
    
-    </div>
+
+<>
+<Layout>
+    
+<Card title={props.item.product_name}
+
+        
+   
+      
+actions={[
+user.id === props.item.user_id && (<Button onClick={modifyItem}>Edit</Button>)]}>
+    
+        <Card.Grid style={gridStyle}>Price: {props.item.product_price}</Card.Grid>
+        <Card.Grid style={gridStyle}>Quantity: {props.item.product_quantity}</Card.Grid>
+        <Card.Grid style={gridStyle}>Category: {props.item.product_category}</Card.Grid>
+        <Card.Grid style={gridStyle}>Description: {props.item.product_description}</Card.Grid>
+        <Card.Grid style={gridStyle}>Market: {props.item.market_name}</Card.Grid>
+        <Card.Grid style={gridStyle}>Location: {props.item.country}</Card.Grid>
+        <Divider/>
+        
+       
+      </Card>
+      </Layout>
+      </>
+
+ 
+
+
+      
+      
   );
 };
+export default MyProducts
+ {/* /* <Panel header="This is panel header 2" key="2">
+      <p>{text}</p>
+    </Panel>
+    <Panel header="This is panel header 3" key="3">
+      <p>{text}</p> 
+     </Panel>  */}
 
-export default MyProducts;
+   

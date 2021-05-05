@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {useHistory, useParams} from "react-router-dom";
 import {NEW_ITEM_PATH} from "../utils/URLs";
-import {Button} from 'antd';
+import {Button, Space, Layout} from 'antd';
 import MyProducts from "./MyList";
 
 const MyListings = (props) => {
@@ -29,6 +29,12 @@ const MyListings = (props) => {
 
   return (
     <div>
+         <Space direction="horizontal" size="large">
+      
+      <h2>My Store <Button  onClick={addItem}>
+          Add Product
+        </Button></h2>
+        </Space>
       {myitems.map((item) => (
         <MyProducts key={item.id} item={item} />
       ))}

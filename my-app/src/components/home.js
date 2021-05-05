@@ -42,9 +42,7 @@ const Home = () => {
           username: usernameSnapshot,
           id: userId,
         });
-        // set list of items for sale
-        // triggers children to mount
-        // children require user context to mount correctly
+        
         axiosWithAuth()
           .get(`${PRODUCTS_PATH}`)
           .then((res) => {
@@ -82,3 +80,4 @@ const Home = () => {
 };
 
 export default Home;
+
