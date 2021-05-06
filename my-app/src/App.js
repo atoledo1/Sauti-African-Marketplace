@@ -24,7 +24,7 @@ function App() {
   return (
     <UserContext.Provider value={{user, setUser}}>
       <div className="App">
-        <h1>African Marketplace</h1>
+        
 
         <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Switch>

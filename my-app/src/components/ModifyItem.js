@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {PRODUCTS_PATH} from "../utils/URLs";
 import {useHistory, useParams} from "react-router-dom";
-import {Button, Form, Input} from 'antd';
+import {Button, Form, Input} from "antd";
 
 const ModifyItem = () => {
   const initialFormValues = {
@@ -59,17 +59,16 @@ const ModifyItem = () => {
     <>
       <h2>Modify Listing</h2>
       <div>
-        <Form style={{ width:"26%", margin:"25px"}}  layout="vertical" >
-          
+        <Form style={{width: "20%", margin: "25px"}} layout="vertical">
           <Form.Item label="Product">
-              <Input
+            <Input
               type="text"
               name="product_name"
               value={formValues.product_name}
-              onChange={onChange}/>
-              </Form.Item>
-        <Form.Item label = "Price">
-           
+              onChange={onChange}
+            />
+          </Form.Item>
+          <Form.Item label="Price">
             <Input
               type="text"
               name="product_price"
@@ -78,35 +77,25 @@ const ModifyItem = () => {
             />
           </Form.Item>
           <Form.Item label="Quantity">
-            
             <Input
               type="text"
               name="product_quantity"
               value={formValues.product_quantity}
               onChange={onChange}
             />
-       </Form.Item>
-       <Form.Item
-        label="Category">
-           
+          </Form.Item>
+          <Form.Item label="Category">
             <Input
               type="text"
               name="product_category"
               value={formValues.product_category}
               onChange={onChange}
             />
-            </Form.Item>
-          
-<Form.Item label="Description">
-            <Input
-              type="text"
-              name="product_description"
-              value={formValues.product_description}
-              onChange={onChange}
-            />
-           </Form.Item>
-       
-       <Form.Item label="Location">
+          </Form.Item>
+
+         
+
+          <Form.Item label="Location">
             <Input
               type="text"
               name="country"
@@ -122,12 +111,25 @@ const ModifyItem = () => {
               value={formValues.market_name}
               onChange={onChange}
             />
-            </Form.Item>
-        <Form.Item>
-          <Button onClick={editListing}htmlType="submit"> Save Changes</Button>
+          </Form.Item>
+          <Form.Item label="Description">
+            <Input
+              type="text"
+              name="product_description"
+              value={formValues.product_description}
+              onChange={onChange}
+            />
           </Form.Item>
           <Form.Item>
-          <Button onClick={deleteListing}htmlType="submit">Delete Product</Button>
+            <Button onClick={editListing} htmlType="submit">
+              {" "}
+              Save Changes
+            </Button>
+          </Form.Item>
+          <Form.Item>
+            <Button onClick={deleteListing} htmlType="submit">
+              Delete Product
+            </Button>
           </Form.Item>
         </Form>
       </div>
@@ -137,12 +139,11 @@ const ModifyItem = () => {
 
 export default ModifyItem;
 
-
 // <Form  style={{ width:"26%", margin:"25px"}}  layout="vertical" name="login" className="login-form" initialValues={{ remember: true }} onFinish={handleSubmit}>
-       
+
 // <Form.Item rules={[{ required: true, message: 'Please input your Username!' }]}label="Username">
 //   <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username"
-   
+
 //     id="logname"
 //     name="username"
 //     type="textbox"
@@ -160,7 +161,7 @@ export default ModifyItem;
 //      </Form.Item>
 //      <Space direction="vertical" size="large">
 // <Form.Item name="remember" valuePropName="checked" noStyle>
-    
+
 //   <Checkbox>Remember me</Checkbox>
 // </Form.Item>
 //   <Form.Item>

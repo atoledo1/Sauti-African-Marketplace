@@ -17,12 +17,7 @@ const MyProducts = (props) => {
   };
 
   
-  const gridStyle = {
-    width: '100',
-    textAlign: 'center',
-   
-    
-  };
+  
   const { Meta } = Card;
 
   return (
@@ -34,23 +29,21 @@ const MyProducts = (props) => {
 <>
 <Layout>
     
-<Card title={props.item.product_name}
+<Card  hoverable="true"title={props.item.product_name}
 
         
    
       
-actions={[
+cover={[
 user.id === props.item.user_id && (<Button onClick={modifyItem}>Edit</Button>)]}>
     
-        <Card.Grid style={gridStyle}>Price: {props.item.product_price}</Card.Grid>
-        <Card.Grid style={gridStyle}>Quantity: {props.item.product_quantity}</Card.Grid>
-        <Card.Grid style={gridStyle}>Category: {props.item.product_category}</Card.Grid>
-        <Card.Grid style={gridStyle}>Description: {props.item.product_description}</Card.Grid>
-        <Card.Grid style={gridStyle}>Market: {props.item.market_name}</Card.Grid>
-        <Card.Grid style={gridStyle}>Location: {props.item.country}</Card.Grid>
-        <Divider/>
-        
-       
+    
+        <p>Price: {props.item.product_price}</p>
+        <p>Quantity: {props.item.product_quantity}</p>
+        <p>Category: {props.item.product_category}</p>
+        <p>Description: {props.item.product_description}</p>
+        <p>Market: {props.item.market_name}</p>
+        <p>Location: {props.item.country}</p> 
       </Card>
       </Layout>
       </>

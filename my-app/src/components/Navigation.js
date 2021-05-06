@@ -1,7 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import "../App.css";
-import {Menu} from "antd";
+import {Menu, Divider} from "antd";
+
 
 
 function Navigation(props) {
@@ -13,14 +14,18 @@ function Navigation(props) {
   return (
     <Menu mode="horizontal">
       <>
+      <Menu.Item><h1>Sauti Africa</h1></Menu.Item>
         {props.loggedIn ? (
           <>
+          <Divider type="vertical"/>
             <Menu.Item>
-              <Link to="/home">Home</Link>
+              <Link to="/home">Marketplace</Link>
             </Menu.Item>
+            <Divider type="vertical"/>
             <Menu.Item>
-              <Link to="/mylistings"> My Listings</Link>
+              <Link to="/mylistings"> Your Store </Link>
             </Menu.Item>
+            <Divider type="vertical"/>
             <Menu.Item>
               <Link to="/login" onClick={logout}>
                 Log Out

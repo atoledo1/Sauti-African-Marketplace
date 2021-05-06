@@ -65,7 +65,7 @@ const Home = () => {
         <Space direction="horizontal" size="large">
       
       <h2>All Products <Button  onClick={addItem}>
-          Add Product
+          Add  new product
         </Button></h2>
         </Space>
       {itemsForSale.map((item) => {
