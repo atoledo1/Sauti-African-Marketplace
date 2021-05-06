@@ -7,7 +7,7 @@ import {UserContext} from "../App";
 import { Space, Button} from 'antd';
 
 
-import Listings from "./Listing";
+import Listings from "./listing";
 
 
 const Home = () => {

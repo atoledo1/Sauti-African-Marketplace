@@ -2,16 +2,16 @@ import React, {useState} from "react";
 import {Route, Switch} from "react-router-dom";
 
 import Login from "./components/login";
-import Register from "./components/Register";
-import AddItem from "./components/AddItem";
-import ModifyItem from "./components/ModifyItem";
-import PrivateRoute from "./components/PrivateRoute";
+import Register from "./components/register"
+import AddItem from "./components/addItem";
+import ModifyItem from "./components/modifyItem";
+import PrivateRoute from "./components/privateroute";
 import "antd/dist/antd.css";
 import "./App.css";
 
-import MyListings from "./components/MyProfile";
-import Home from "./components/Home";
-import Navigation from "./components/Navigation";
+import MyListings from "./components/myprofile";
+import Home from "./components/home";
+import Navigation from "./components/navigation";
 
 
 
