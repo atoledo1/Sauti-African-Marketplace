@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Route, Switch} from "react-router-dom";
 
 import Login from "./components/login";
-import Register from "./components/register"
+import Register from "./components/register";
 import AddItem from "./components/additem";
 import ModifyItem from "./components/modifyitem";
 import PrivateRoute from "./components/privateroute";
