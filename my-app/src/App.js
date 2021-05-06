@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Route, Switch} from "react-router-dom";
-import Home from "./components/Home";
-import Navigation from "./components/Navigation";
+
 import Login from "./components/login";
 import Register from "./components/Register";
 import AddItem from "./components/AddItem";
@@ -9,7 +8,11 @@ import ModifyItem from "./components/ModifyItem";
 import PrivateRoute from "./components/PrivateRoute";
 import "antd/dist/antd.css";
 import "./App.css";
+
 import MyListings from "./components/MyProfile";
+import Home from "./components/Home";
+import Navigation from "./components/Navigation";
+
 
 
 export const UserContext = React.createContext();
@@ -29,7 +32,7 @@ function App() {
 
         <Navigation  loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Switch>
-          <Route path="/login">
+          <Route path="/">
             <Login setLoggedIn={setLoggedIn} />
           </Route>
 
