@@ -27,7 +27,7 @@ function Register() {
   const handleSubmit = (e) => {
     axios.post(`${BASE_URL}${REGISTER_PATH}`, form).then((res) => {
       console.log(res.data.data.password);
-      history.push("/login");
+      history.push("/");
     });
   };
 

@@ -42,7 +42,7 @@ function Navigation(props) {
               <Link to="/register">Register</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/login">Log In</Link>
+              <Link to="/">Log In</Link>
             </Menu.Item>
           </>
         )}
