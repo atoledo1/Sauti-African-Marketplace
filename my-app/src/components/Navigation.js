@@ -31,7 +31,7 @@ function Navigation(props) {
             </Menu.Item>
             <Divider type="vertical"/>
             <Menu.Item>
-              <Link to="/" onClick={logout}>
+              <Link to="/login" onClick={logout}>
                 Log Out
               </Link>
             </Menu.Item>
@@ -42,7 +42,7 @@ function Navigation(props) {
               <Link to="/register">Register</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/">Log In</Link>
+              <Link to="/login">Log In</Link>
             </Menu.Item>
           </>
         )}

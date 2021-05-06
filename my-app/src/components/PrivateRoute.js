@@ -13,7 +13,7 @@ function PrivateRoute({children, ...rest}) {
             return {...children};
           }
         } else {
-          return <Redirect to="/" />;
+          return <Redirect to="/login" />;
         }
       }}
     />
