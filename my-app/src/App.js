@@ -3,8 +3,8 @@ import {Route, Switch} from "react-router-dom";
 
 import Login from "./components/login";
 import Register from "./components/register"
-import AddItem from "./components/addItem";
-import ModifyItem from "./components/modifyItem";
+import AddItem from "./components/additem";
+import ModifyItem from "./components/modifyitem";
 import PrivateRoute from "./components/privateroute";
 import "antd/dist/antd.css";
 import "./App.css";

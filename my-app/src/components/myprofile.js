@@ -3,7 +3,7 @@ import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {useHistory, useParams} from "react-router-dom";
 import {NEW_ITEM_PATH} from "../utils/URLs";
 import {Button, Space, Layout, Divider} from 'antd';
-import MyProducts from "./myList";
+import MyProducts from "./mylist";
 
 const MyListings = (props) => {
   const {push} = useHistory();
