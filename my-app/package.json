@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+     "build": "CI= react-scripts build",
     "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test"
   },
   "eslintConfig": {
