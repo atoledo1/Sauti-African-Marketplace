@@ -5,21 +5,25 @@ import {Menu, Divider} from "antd";
 
 
 
+
 function Navigation(props) {
   const logout = function () {
     localStorage.removeItem("username");
     localStorage.removeItem("token");
     props.setLoggedIn(false);
   };
+
   return (
-    <Menu mode="horizontal">
+      
+       
+    <Menu style={{ backgroundColor:"#FCFAEA"}} mode="horizontal">
       <>
-      <Menu.Item><h1>Sauti Africa</h1></Menu.Item>
+      <Menu.Item><h1>Sauti Marketplace</h1></Menu.Item>
         {props.loggedIn ? (
           <>
           <Divider type="vertical"/>
             <Menu.Item>
-              <Link to="/home">Marketplace</Link>
+              <Link to="/home">Home</Link>
             </Menu.Item>
             <Divider type="vertical"/>
             <Menu.Item>
@@ -44,6 +48,7 @@ function Navigation(props) {
         )}
       </>
     </Menu>
+ 
   );
 }
 export default Navigation;

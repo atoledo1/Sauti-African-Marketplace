@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {useHistory} from "react-router-dom";
 
 import {UserContext} from "../App";
-import {Button, Divider,Card, Layout } from 'antd'; 
+import {Button, Divider,Card, Col, Row} from 'antd'; 
 import Title from "antd/lib/skeleton/Title";
 
 
@@ -24,12 +24,11 @@ const MyProducts = (props) => {
 
 
     
-   
-
-<>
-<Layout>
+<div  style={{display:"flex",}}className="site-card-wrapper">
+ 
+     
     
-<Card  hoverable="true"title={props.item.product_name}
+<Card style={{width:"300px"}} hoverable="true"title={props.item.product_name}
 
         
    
@@ -45,8 +44,9 @@ user.id === props.item.user_id && (<Button onClick={modifyItem}>Edit</Button>)]}
         <p>Market: {props.item.market_name}</p>
         <p>Location: {props.item.country}</p> 
       </Card>
-      </Layout>
-      </>
+  
+  </div>
+   
 
  
 

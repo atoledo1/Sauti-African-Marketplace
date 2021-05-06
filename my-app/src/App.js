@@ -10,6 +10,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import "antd/dist/antd.css";
 import "./App.css";
 import MyListings from "./components/MyProfile";
+import Main from "./components/main"
 
 export const UserContext = React.createContext();
 
@@ -26,7 +27,7 @@ function App() {
       <div className="App">
         
 
-        <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <Navigation  loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Switch>
           <Route path="/login">
             <Login setLoggedIn={setLoggedIn} />
@@ -35,6 +36,10 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
+          <Route path="/">
+            <Main></Main>
+            </Route>
+
 
           <PrivateRoute path="/add-item">
             <AddItem />
