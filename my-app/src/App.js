@@ -10,7 +10,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import "antd/dist/antd.css";
 import "./App.css";
 import MyListings from "./components/MyProfile";
-import Main from "./components/main"
+
 
 export const UserContext = React.createContext();
 
@@ -36,9 +36,7 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/">
-            <Main></Main>
-            </Route>
+         
 
 
           <PrivateRoute path="/add-item">

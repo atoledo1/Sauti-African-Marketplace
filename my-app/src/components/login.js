@@ -9,7 +9,7 @@ import {BASE_URL, LOGIN_PATH} from "../utils/URLs";
 import "../App.css";
 import { Form, Input, Button, Checkbox, Space} from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-
+import sauti from "../images/sauti.png"
 
 const LogForm = {
   username: "",
@@ -56,6 +56,12 @@ function Login(props) {
   };
 
   return (
+<div style={{ height:"680px",zIndex:"80", width:"100%",backgroundImage:`url(${sauti})`,
+   backgroundSize: 'cover',
+   backgroundPosition:"center",
+  backgroundRepeat: 'no-repeat'}}>
+<div style={{backgroundColor:"#FCFAEA", zindex:"100",  width: '750px',
+        height: '680px', padding:"60px", paddingLeft:"200px", paddingTop:"100px"}}>
 
 
       <Form  style={{ width:"26%", margin:"25px"}}  layout="vertical" name="login" className="login-form" initialValues={{ remember: true }} onFinish={handleSubmit}>
@@ -89,7 +95,8 @@ function Login(props) {
         </Form.Item>
         </Space>
       </Form>
-    
+      </div>
+    </div>
   );
 }
 export default Login;
