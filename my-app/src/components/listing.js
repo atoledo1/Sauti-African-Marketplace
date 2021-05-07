@@ -21,7 +21,7 @@ const Listings = (props) => {
 
   return (
     <Layout>
-     <div  className="backgroundgeneral"style={{width:"200vh",}}>
+     <div  className="backgroundgeneral"style={{width:"200vh", paddingTop:'30px'}}>
       <Collapse expandIcon={({ isActive }) =>(isActive) ? <MinusSquareOutlined/> : <PlusSquareOutlined /> } expandIconPosition="right"  style={{width:"320px", marginLeft:"40%", marginTop:"10px",  textAlign:"center",border:"none" }}>
         <Panel className="backgroundelements"header={[props.item.product_name]}>
           <Card className="backgroundelements"

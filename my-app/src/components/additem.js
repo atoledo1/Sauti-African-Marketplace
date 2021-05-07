@@ -47,11 +47,11 @@ const AddItem = () => {
 
   return (
     <div style={{width:"100%", height:"100%"}}>
-      <h2 style={{marginLeft: "40%", marginTop:"30px"}}>Add product for sale</h2>
+     
       <div class="container">
       <Form
         onFinish={onSubmit}
-        style={{width: "20%", marginLeft: "50%"}}
+        style={{width: "20%", marginTop:"30px", marginLeft: "50%"}}
         layout="horizontal"
       >
         <Form.Item label="Product">
@@ -113,7 +113,7 @@ const AddItem = () => {
           />
         </Form.Item>
         <Form.Item >
-          <Button style={{marginleft:"30px"}}htmlType="submit">Add Product</Button>
+          <Button style={{marginleft:"30px"}}htmlType="submit">Save</Button>
         </Form.Item>
       </Form>
       </div>
