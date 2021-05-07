@@ -28,8 +28,8 @@ const MyListings = (props) => {
   };
 
   return (
-    <div>
-        <Layout >
+    <div >
+        <Layout className="backgroundgeneral"  style={{height:"100vh"}}>
          <Space direction="horizontal" size="large">
             
  
@@ -39,7 +39,7 @@ const MyListings = (props) => {
         </Button>
         </Space>
 
-        <div className="space-align-container">
+        <div className="space-align-container, backgroundgeneral">
       <div className="space-align-block">
         <Space align="center">
       

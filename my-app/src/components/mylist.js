@@ -15,10 +15,10 @@ const MyProducts = (props) => {
 
 
   return (
-    <div className="space-align-container">
+    <div className="space-align-container  backgroundgeneral">
       <div className="space-align-block">
         <Space align="center">
-          <Card
+          <Card className="backgroundelements"
             style={{width: "300px", textAlign:"center"}}
             hoverable="true"
             title={props.item.product_name}
