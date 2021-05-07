@@ -21,11 +21,11 @@ const Listings = (props) => {
 
   return (
     <Layout>
-     <div style={{width:"200vh",}}>
-      <Collapse expandIcon={({ isActive }) =>(isActive) ? <MinusSquareOutlined/> : <PlusSquareOutlined /> } expandIconPosition="right" style={{width:"600px", marginLeft:"30%",  textAlign:"center"}}>
-        <Panel header={[props.item.product_name]}>
-          <Card
-            style={{ textAlign:"center" , marginLeft:'25%', width: "300px"}}
+     <div  className="backgroundgeneral"style={{width:"200vh",}}>
+      <Collapse expandIcon={({ isActive }) =>(isActive) ? <MinusSquareOutlined/> : <PlusSquareOutlined /> } expandIconPosition="right"  style={{width:"320px", marginLeft:"40%", marginTop:"10px",  textAlign:"center",border:"none" }}>
+        <Panel className="backgroundelements"header={[props.item.product_name]}>
+          <Card className="backgroundelements"
+            style={{ textAlign:"center" , width: "300px"}}
             hoverable="true"
             title={`Seller:${seller[0].username}`}
             actions={[
@@ -52,4 +52,4 @@ const Listings = (props) => {
 
 export default Listings;
 
-// user.id === props.item.user_id? <Button onClick={modifyItem}>Edit</Button> : <Button>Buy</Button>
+

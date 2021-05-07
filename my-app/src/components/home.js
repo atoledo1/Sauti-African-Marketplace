@@ -4,7 +4,7 @@ import {useHistory} from "react-router-dom";
 import {PRODUCTS_PATH, USERS_PATH} from "../utils/URLs";
 import {UserContext} from "../App";
 
-import {Space, Button} from "antd";
+import {Space, Button, Layout} from "antd";
 
 import Listings from "./listing";
 
@@ -58,6 +58,7 @@ const Home = () => {
   };
 
   return (
+    <Layout style={{height:"100vh"}} className="backgroundgeneral">
     <div style={{width: "100%", height: "100%"}}>
       <Space direction="horizontal" size="large">
         <h2 style={{marginLeft: "570px", marginRight: "40px"}}>
@@ -70,6 +71,7 @@ const Home = () => {
         })}
       </div>
     </div>
+    </Layout>
   );
 };
 
