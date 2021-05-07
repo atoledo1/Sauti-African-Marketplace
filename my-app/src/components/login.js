@@ -61,10 +61,10 @@ function Login(props) {
    backgroundPosition:"center",
   backgroundRepeat: 'no-repeat'}}>
 <div style={{backgroundColor:"#FCFAEA", zindex:"100",  width: '750px',
-        height: '680px', padding:"60px", paddingLeft:"200px", paddingTop:"100px"}}>
+        height: '680px',}}>
 
 
-      <Form  style={{ width:"26%", margin:"25px"}}  layout="vertical" name="login" className="login-form" initialValues={{ remember: true }} onFinish={handleSubmit}>
+      <Form  style={{ width:"300px", padding:"50px", marginLeft:"200px", paddingTop:"200px"}}  layout="horizontal" name="login" className="login-form" initialValues={{ remember: true }} onFinish={handleSubmit}>
        
         <Form.Item rules={[{ required: true, message: 'Please input your Username!' }]}label="Username">
           <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username"
