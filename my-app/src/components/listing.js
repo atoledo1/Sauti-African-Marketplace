@@ -28,7 +28,7 @@ return (
 
   <Collapse >
   <Panel header={props.item.product_name}  >
-    <Card style={{width:"300px"}} hoverable="true" title={`Seller:${seller[0].username}`} actions={[user.id === props.item.user_id && (<Button onClick={modifyItem}>Edit</Button>),user.id !== props.item.user_id &&  <Button>Buy</Button>]}>
+    <Card style={{width:"300px"}} hoverable="true" title={`Seller:${seller[0].username}`} actions={[(user.id === props.item.user_id)? <Button onClick={modifyItem}>Edit</Button> : <Button>Buy</Button>]}>
         <p>{`Price: ${props.item.product_price}`}</p>
         <p>{`Quantity: ${props.item.product_quantity}`}</p>
         <p>{`Location:${props.item.country}`}</p>
@@ -48,3 +48,6 @@ return (
  
 
 export default Listings;
+
+
+// user.id === props.item.user_id? <Button onClick={modifyItem}>Edit</Button> : <Button>Buy</Button>
