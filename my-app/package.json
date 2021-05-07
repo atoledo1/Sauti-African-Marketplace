@@ -16,8 +16,8 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-     "build": "CI= react-scripts build",
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
+     "build":  "DISABLE_ESLINT_PLUGIN=true CI= react-scripts build",
     "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test"
   },
   "eslintConfig": {

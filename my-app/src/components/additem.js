@@ -3,7 +3,7 @@ import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {NEW_ITEM_PATH} from "../utils/URLs";
 import {useHistory} from "react-router-dom";
 import {UserContext} from "../App";
-import{Button} from 'antd'
+import {Button, Form, Input} from "antd";
 
 const AddItem = () => {
   const initialFormValues = {
@@ -47,75 +47,75 @@ const AddItem = () => {
 
   return (
     <>
-      <h2 >Create a New Listing</h2>
-      <div >
-        <form onSubmit={onSubmit}>
-          <label >
-            Product Name:
-            <input
-              type="text"
-              name="product_name"
-              value={formValues.product_name}
-              onChange={onChange}
-            />
-          </label>
-          <label >
-            Price:$
-            <input
-              type="text"
-              name="product_price"
-              value={formValues.product_price}
-              onChange={onChange}
-            />
-          </label>
-          <label >
-            Quantity:
-            <input
-              type="text"
-              name="product_quantity"
-              value={formValues.product_quantity}
-              onChange={onChange}
-            />
-          </label>
-          <label >
-            Product Category:
-            <input
-              type="text"
-              name="product_category"
-              value={formValues.product_category}
-              onChange={onChange}
-            />
-          </label>
-          <label >
-            Product Description:
-            <input
-              type="text"
-              name="product_description"
-              value={formValues.product_description}
-              onChange={onChange}
-            />
-          </label>
-          <label >
-            Country:
-            <input
-              type="text"
-              name="country"
-              value={formValues.country}
-              onChange={onChange}
-            />
-          </label>
-          <label >
-            Market Name:
-            <input
-              type="text"
-              name="market_name"
-              value={formValues.market_name}
-              onChange={onChange}
-            />
-          </label>
-          <Button className="sale-btn">Add Product</Button>
-        </form>
-      </div>
+      <h2 style={{marginLeft: "25px"}}>Add product for sale</h2>
+
+      <Form
+        onFinish={onSubmit}
+        style={{width: "20%", margin: "25px"}}
+        layout="vertical"
+      >
+        <Form.Item label="Product">
+          <Input
+            type="text"
+            name="product_name"
+            value={formValues.product_name}
+            onChange={onChange}
+          />
+        </Form.Item>
+        <Form.Item label="Price">
+          <Input
+            type="text"
+            name="product_price"
+            value={formValues.product_price}
+            onChange={onChange}
+          />
+        </Form.Item>
+        <Form.Item label="Quantity">
+          <Input
+            type="text"
+            name="product_quantity"
+            value={formValues.product_quantity}
+            onChange={onChange}
+          />
+        </Form.Item>
+        <Form.Item label="Category">
+          <Input
+            type="text"
+            name="product_category"
+            value={formValues.product_category}
+            onChange={onChange}
+          />
+        </Form.Item>
+
+        <Form.Item label="Location">
+          <Input
+            type="text"
+            name="country"
+            value={formValues.country}
+            onChange={onChange}
+          />
+        </Form.Item>
+
+        <Form.Item label="Market">
+          <Input
+            type="text"
+            name="market_name"
+            value={formValues.market_name}
+            onChange={onChange}
+          />
+        </Form.Item>
+        <Form.Item label="Description">
+          <Input
+            type="text"
+            name="product_description"
+            value={formValues.product_description}
+            onChange={onChange}
+          />
+        </Form.Item>
+        <Form.Item>
+          <Button htmlType="submit">Add Product</Button>
+        </Form.Item>
+      </Form>
     </>
   );
 };
