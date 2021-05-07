@@ -15,8 +15,8 @@ const MyProducts = (props) => {
 
 
   return (
-    <div className="space-align-container  backgroundgeneral">
-      <div className="space-align-block">
+    <div className="space-align-container   backgroundgeneral" >
+      <div className="space-align-block" >
         <Space align="center">
           <Card className="backgroundelements"
             style={{width: "300px", textAlign:"center"}}

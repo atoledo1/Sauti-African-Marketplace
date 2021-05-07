@@ -16,7 +16,7 @@ function Navigation(props) {
   return (
       
        
-    <Menu  mode="horizontal"  className="primary">
+    <Menu     style={{ position: 'fixed', zIndex: 1, width: '100%', height:"65px" }} mode="horizontal"  className="primary">
       <>
       <Menu.Item><h1>Sauti Marketplace</h1></Menu.Item>
         {props.loggedIn ? (

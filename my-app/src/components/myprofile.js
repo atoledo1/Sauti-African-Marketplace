@@ -34,7 +34,7 @@ const MyListings = (props) => {
      
       
 
-        <div className="space-align-container, backgroundgeneral">
+        <div className="space-align-container, backgroundgeneral" style={{ marginTop:"45px"}}>
       <div className="space-align-block">
         <Space align="center">
       

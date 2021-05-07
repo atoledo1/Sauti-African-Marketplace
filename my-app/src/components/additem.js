@@ -3,7 +3,7 @@ import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {NEW_ITEM_PATH} from "../utils/URLs";
 import {useHistory} from "react-router-dom";
 import {UserContext} from "../App";
-import {Button, Form, Input} from "antd";
+import {Button, Form, Input, Layout} from "antd";
 
 const AddItem = () => {
   const initialFormValues = {
@@ -46,12 +46,13 @@ const AddItem = () => {
   };
 
   return (
-    <div style={{width:"100%", height:"100%"}}>
+    <Layout>
+    <div  className="backgroundgeneral" style={{width:"100%", height:"100vh"}}>
      
-      <div class="container">
+      <div class="container" className="backgroundgeneral" >
       <Form
         onFinish={onSubmit}
-        style={{width: "20%", marginTop:"30px", marginLeft: "50%"}}
+        style={{width: "50%", marginTop:"100px", marginLeft: "25%"}}
         layout="horizontal"
       >
         <Form.Item label="Product">
@@ -118,6 +119,7 @@ const AddItem = () => {
       </Form>
       </div>
     </div>
+    </Layout>
   );
 };
 

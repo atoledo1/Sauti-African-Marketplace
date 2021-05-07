@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {PRODUCTS_PATH} from "../utils/URLs";
 import {useHistory, useParams} from "react-router-dom";
-import {Button, Form, Input, Space, Divider} from "antd";
+import {Button, Form, Input, Space, Divider, Layout} from "antd";
 
 const ModifyItem = () => {
   const initialFormValues = {
@@ -56,10 +56,11 @@ const ModifyItem = () => {
   };
 
   return (
-    <div style={{width:"100%", height:"100%"}}>
-      <h2 style={{marginLeft: "40%", marginTop:"30px"}}>Modify Listing</h2>
-      <div className="container">
-        <Form style={{width: "20%", marginLeft: "50%"}} layout="horizontal">
+    <Layout>
+    <div  className="backgroundgeneral" style={{width:"100%", height:"100vh"}}>
+     
+      <div class="container" className="backgroundgeneral" >
+        <Form style={{width: "30%",  marginTop:"100px", marginLeft: "40%"}} layout="horizontal">
           <Form.Item label="Product">
             <Input
               type="text"
@@ -135,6 +136,7 @@ const ModifyItem = () => {
         </Form>
       </div>
     </div>
+    </Layout>
   );
 };
 
