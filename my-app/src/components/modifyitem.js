@@ -56,10 +56,10 @@ const ModifyItem = () => {
   };
 
   return (
-    <>
-      <h2>Modify Listing</h2>
-      <div>
-        <Form style={{width: "20%", margin: "25px"}} layout="vertical">
+    <div style={{width:"100%", height:"100%"}}>
+      <h2 style={{marginLeft: "40%", marginTop:"30px"}}>Modify Listing</h2>
+      <div className="container">
+        <Form style={{width: "20%", marginLeft: "50%"}} layout="horizontal">
           <Form.Item label="Product">
             <Input
               type="text"
@@ -119,7 +119,7 @@ const ModifyItem = () => {
             />
           </Form.Item>
           <div style={{display:"flex"}}>
-            <Space size="large">
+            <Space size="medium">
           <Form.Item>
             <Button onClick={editListing} htmlType="submit">
               Save Changes
@@ -134,7 +134,7 @@ const ModifyItem = () => {
           </div>
         </Form>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -4,11 +4,9 @@ import {useHistory} from "react-router-dom";
 import {PRODUCTS_PATH, USERS_PATH} from "../utils/URLs";
 import {UserContext} from "../App";
 
-import { Space, Button} from 'antd';
-
+import {Space, Button} from "antd";
 
 import Listings from "./listing";
-
 
 const Home = () => {
   const {push} = useHistory();
@@ -17,7 +15,6 @@ const Home = () => {
   const [userList, setUserList] = useState([]);
 
   useEffect(() => {
-    // get list of all users - single API call providing data to all children
     axiosWithAuth()
       .get(`${USERS_PATH}`)
       .then((res) => {
@@ -42,7 +39,7 @@ const Home = () => {
           username: usernameSnapshot,
           id: userId,
         });
-        
+
         axiosWithAuth()
           .get(`${PRODUCTS_PATH}`)
           .then((res) => {
@@ -61,24 +58,19 @@ const Home = () => {
   };
 
   return (
-    <div  style={{width:"100%", height:"100%"}}>
-        <Space direction="horizontal" size="large">
-      
-      <h2 style={{marginLeft:"570px", marginRight:"40px"}}>All Products <Button  onClick={addItem}>
-          Add  new product
-        </Button></h2>
-        </Space>
-        <div style={{width:"200vh", }}>
-      {itemsForSale.map((item) => {
-        return <Listings key={item.id} item={item} userList={userList} />;
-      })}
-    
-        
+    <div style={{width: "100%", height: "100%"}}>
+      <Space direction="horizontal" size="large">
+        <h2 style={{marginLeft: "570px", marginRight: "40px"}}>
+          All Products <Button onClick={addItem}>Add new product</Button>
+        </h2>
+      </Space>
+      <div style={{width: "200vh"}}>
+        {itemsForSale.map((item) => {
+          return <Listings key={item.id} item={item} userList={userList} />;
+        })}
       </div>
-      
     </div>
   );
 };
 
 export default Home;
-

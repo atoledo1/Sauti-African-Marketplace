@@ -54,3 +54,13 @@ This is mostly intended for prototyping; please download the pattern and re-host
   padding: 4px;
   /* border: 1px solid #40a9ff; */
 }
+
+.container {
+  width: 1100px;
+  clear: both;
+}
+
+.container Input {
+  width: 100%;
+  clear: both;
+}

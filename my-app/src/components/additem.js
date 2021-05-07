@@ -46,13 +46,13 @@ const AddItem = () => {
   };
 
   return (
-    <>
-      <h2 style={{marginLeft: "25px"}}>Add product for sale</h2>
-
+    <div style={{width:"100%", height:"100%"}}>
+      <h2 style={{marginLeft: "40%", marginTop:"30px"}}>Add product for sale</h2>
+      <div class="container">
       <Form
         onFinish={onSubmit}
-        style={{width: "20%", margin: "25px"}}
-        layout="vertical"
+        style={{width: "20%", marginLeft: "50%"}}
+        layout="horizontal"
       >
         <Form.Item label="Product">
           <Input
@@ -112,11 +112,12 @@ const AddItem = () => {
             onChange={onChange}
           />
         </Form.Item>
-        <Form.Item>
-          <Button htmlType="submit">Add Product</Button>
+        <Form.Item >
+          <Button style={{marginleft:"30px"}}htmlType="submit">Add Product</Button>
         </Form.Item>
       </Form>
-    </>
+      </div>
+    </div>
   );
 };
 
