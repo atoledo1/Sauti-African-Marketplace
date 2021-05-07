@@ -33,7 +33,7 @@ const MyProducts = (props) => {
         
    
       
-cover={[
+actions={[
 user.id === props.item.user_id && (<Button onClick={modifyItem}>Edit</Button>)]}>
     
     

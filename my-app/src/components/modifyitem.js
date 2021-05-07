@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {PRODUCTS_PATH} from "../utils/URLs";
 import {useHistory, useParams} from "react-router-dom";
-import {Button, Form, Input} from "antd";
+import {Button, Form, Input, Space, Divider} from "antd";
 
 const ModifyItem = () => {
   const initialFormValues = {
@@ -93,8 +93,6 @@ const ModifyItem = () => {
             />
           </Form.Item>
 
-         
-
           <Form.Item label="Location">
             <Input
               type="text"
@@ -120,9 +118,10 @@ const ModifyItem = () => {
               onChange={onChange}
             />
           </Form.Item>
+          <div style={{display:"flex"}}>
+            <Space size="large">
           <Form.Item>
             <Button onClick={editListing} htmlType="submit">
-              {" "}
               Save Changes
             </Button>
           </Form.Item>
@@ -131,6 +130,8 @@ const ModifyItem = () => {
               Delete Product
             </Button>
           </Form.Item>
+          </Space>
+          </div>
         </Form>
       </div>
     </>
@@ -139,37 +140,3 @@ const ModifyItem = () => {
 
 export default ModifyItem;
 
-// <Form  style={{ width:"26%", margin:"25px"}}  layout="vertical" name="login" className="login-form" initialValues={{ remember: true }} onFinish={handleSubmit}>
-
-// <Form.Item rules={[{ required: true, message: 'Please input your Username!' }]}label="Username">
-//   <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username"
-
-//     id="logname"
-//     name="username"
-//     type="textbox"
-//     onChange={handleChange}/>
-//   </Form.Item>
-
-// <Form.Item rules={[{ required: true, message: 'Please input your Password!' }]}label="Password">
-//   <Input.Password   prefix={<LockOutlined className="site-form-item-icon" />}
-//     id="logpass"
-//     name="password"
-//     type="password"
-//     onChange={handleChange}
-//     placeholder="Password"
-//     />
-//      </Form.Item>
-//      <Space direction="vertical" size="large">
-// <Form.Item name="remember" valuePropName="checked" noStyle>
-
-//   <Checkbox>Remember me</Checkbox>
-// </Form.Item>
-//   <Form.Item>
-// <Button type="primary"className="login-form-button" htmlType="submit">Log in</Button>
-
-// </Form.Item>
-// </Space>
-// </Form>
-
-// );
-// }
