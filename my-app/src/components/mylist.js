@@ -24,7 +24,7 @@ const MyProducts = (props) => {
             title={props.item.product_name}
             actions={[
               user.id === props.item.user_id && (
-                <Button onClick={modifyItem}>Edit</Button>
+                <Button  className="primary" onClick={modifyItem}>Edit</Button>
               ),
             ]}
           >

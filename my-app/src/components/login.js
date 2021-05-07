@@ -108,8 +108,8 @@ function Login(props) {
             </Form.Item>
             <Form.Item>
               <Button
-                type="primary"
-                className="login-form-button"
+                
+                className="primary"
                 htmlType="submit"
               >
                 Log in

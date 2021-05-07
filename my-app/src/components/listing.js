@@ -30,9 +30,9 @@ const Listings = (props) => {
             title={`Seller:${seller[0].username}`}
             actions={[
               user.id === props.item.user_id ? (
-                <Button onClick={modifyItem}>Edit</Button>
+                <Button  className="primary"onClick={modifyItem}>Edit</Button>
               ) : (
-                <Button>Buy</Button>
+                <Button className="primary">Buy</Button>
               ),
             ]}
           >

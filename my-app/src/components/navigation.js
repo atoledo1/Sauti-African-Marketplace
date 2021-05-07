@@ -16,7 +16,7 @@ function Navigation(props) {
   return (
       
        
-    <Menu style={{ backgroundColor:"#FCFAEA"}} mode="horizontal">
+    <Menu  mode="horizontal"  className="primary">
       <>
       <Menu.Item><h1>Sauti Marketplace</h1></Menu.Item>
         {props.loggedIn ? (
@@ -31,7 +31,7 @@ function Navigation(props) {
               <Link to="/mylistings"> Your Store </Link>
             </Menu.Item>
             <Divider type="vertical"/>
-            <Menu.Item>
+            <Menu.Item >
              <Link to="/add-item"> Add Product </Link>
             </Menu.Item>
            

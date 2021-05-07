@@ -98,7 +98,7 @@ function Register() {
         />
       </Form.Item>
       <Form.Item>
-        <Button type="primary" htmlType="submit">
+        <Button className="primary" htmlType="submit">
           Register
         </Button>
       </Form.Item>
