@@ -43,3 +43,14 @@
 background-image: url("https://www.transparenttextures.com/patterns/rough-cloth-light.png");
 This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
+.space-align-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.space-align-block {
+  flex: none;
+  margin: 16px 16px;
+  padding: 4px;
+  /* border: 1px solid #40a9ff; */
+}

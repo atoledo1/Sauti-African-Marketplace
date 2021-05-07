@@ -61,17 +61,18 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div  style={{width:"100%", height:"100%"}}>
         <Space direction="horizontal" size="large">
       
-      <h2>All Products <Button  onClick={addItem}>
+      <h2 style={{marginLeft:"570px"}}>All Products <Button  onClick={addItem}>
           Add  new product
         </Button></h2>
         </Space>
+        <div style={{width:"200vh", }}>
       {itemsForSale.map((item) => {
         return <Listings key={item.id} item={item} userList={userList} />;
       })}
-      <div>
+    
         
       </div>
       

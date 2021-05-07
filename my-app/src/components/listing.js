@@ -1,7 +1,9 @@
 import React, {useContext} from "react";
 import {UserContext} from "../App";
 import {useHistory} from "react-router-dom";
-import {Button,Card,Collapse, Layout } from 'antd';
+import {Button, Card, Collapse, Layout} from "antd";
+import {PlusSquareOutlined, MinusSquareOutlined} from '@ant-design/icons'
+
 
 const Listings = (props) => {
   const {push} = useHistory();
@@ -15,39 +17,39 @@ const Listings = (props) => {
     push(`/modify-item/${props.item.id}`);
   };
 
+  const {Panel} = Collapse;
 
-const { Panel } = Collapse;
-  
-   
-
-
-return (
-  
-      
+  return (
     <Layout>
-
-  <Collapse >
-  <Panel header={props.item.product_name}  >
-    <Card style={{width:"300px"}} hoverable="true" title={`Seller:${seller[0].username}`} actions={[(user.id === props.item.user_id)? <Button onClick={modifyItem}>Edit</Button> : <Button>Buy</Button>]}>
-        <p>{`Price: ${props.item.product_price}`}</p>
-        <p>{`Quantity: ${props.item.product_quantity}`}</p>
-        <p>{`Location:${props.item.country}`}</p>
-        <p>  {`Market: ${props.item.market_name}`}</p>
-        <p> {`Category: ${props.item.product_category}`} </p>
-        <p> {`Description: ${props.item.product_description}`}</p>
-    </Card>
-  </Panel>
- 
-
-</Collapse>
-</Layout>
- 
- 
-);
+     <div style={{width:"200vh",}}>
+      <Collapse expandIcon={({ isActive }) =>(isActive) ? <MinusSquareOutlined/> : <PlusSquareOutlined /> } expandIconPosition="right" style={{width:"600px", marginLeft:"30%",  textAlign:"center"}}>
+        <Panel header={[props.item.product_name]}>
+          <Card
+            style={{ textAlign:"center" , marginLeft:"24%",width: "300px"}}
+            hoverable="true"
+            title={`Seller:${seller[0].username}`}
+            actions={[
+              user.id === props.item.user_id ? (
+                <Button onClick={modifyItem}>Edit</Button>
+              ) : (
+                <Button>Buy</Button>
+              ),
+            ]}
+          >
+            <p>{`Price: ${props.item.product_price}`}</p>
+            <p>{`Quantity: ${props.item.product_quantity}`}</p>
+            <p>{`Location:${props.item.country}`}</p>
+            <p> {`Market: ${props.item.market_name}`}</p>
+            <p> {`Category: ${props.item.product_category}`} </p>
+            <p> {`Description: ${props.item.product_description}`}</p>
+          </Card>
+        </Panel>
+      </Collapse>
+      </div>
+    </Layout>
+  );
 };
- 
 
 export default Listings;
-
 
 // user.id === props.item.user_id? <Button onClick={modifyItem}>Edit</Button> : <Button>Buy</Button>

@@ -29,20 +29,26 @@ const MyListings = (props) => {
 
   return (
     <div>
-        <Layout>
+        <Layout >
          <Space direction="horizontal" size="large">
             
  
-      <h2 style={{marginLeft:"55px"}}> Welcome! </h2>
+      <h2 style={{marginLeft:"570px"}}> Welcome! </h2>
       <Divider type="vertical"/>  <Button  onClick={addItem}>
           Add Product
         </Button>
         </Space>
+
+        <div className="space-align-container">
+      <div className="space-align-block">
+        <Space align="center">
       
       {myitems.map((item) => (
         <MyProducts key={item.id} item={item} />
       ))}
-    
+      </Space>
+    </div>
+    </div>
     </Layout>
     </div>
   );
