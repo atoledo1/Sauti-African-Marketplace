@@ -8,6 +8,7 @@ import "../App.css";
 
 import {UserOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
 import {Form, Input, Button, Space} from "antd";
+import sauti from "../images/sauti.png"
 const initialForm = {
   email: "",
   username: "",
@@ -32,7 +33,14 @@ function Register() {
   };
 
   return (
-    <Form style={{width: "25%", margin:"25px"}} layout="vertical">
+    <div style={{ height:"680px",zIndex:"80", width:"100%",backgroundImage:`url(${sauti})`,
+   backgroundSize: 'cover',
+   backgroundPosition:"center",
+  backgroundRepeat: 'no-repeat'}}>
+<div style={{backgroundColor:"#FCFAEA", zindex:"100",  width: '750px',
+        height: '680px',}}>
+<div className="container">
+    <Form style={{ width:"300px", padding:"50px", marginLeft:"200px", paddingTop:"200px"}} layout="horizontal">
       <Form.Item
         rules={[
           {
@@ -95,6 +103,9 @@ function Register() {
         </Button>
       </Form.Item>
     </Form>
+    </div>
+    </div>
+    </div>
   );
 }
 export default Register;
