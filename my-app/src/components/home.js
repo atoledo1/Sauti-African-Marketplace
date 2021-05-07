@@ -64,7 +64,7 @@ const Home = () => {
     <div  style={{width:"100%", height:"100%"}}>
         <Space direction="horizontal" size="large">
       
-      <h2 style={{marginLeft:"570px"}}>All Products <Button  onClick={addItem}>
+      <h2 style={{marginLeft:"570px", marginRight:"40px"}}>All Products <Button  onClick={addItem}>
           Add  new product
         </Button></h2>
         </Space>

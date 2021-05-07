@@ -25,7 +25,7 @@ const Listings = (props) => {
       <Collapse expandIcon={({ isActive }) =>(isActive) ? <MinusSquareOutlined/> : <PlusSquareOutlined /> } expandIconPosition="right" style={{width:"600px", marginLeft:"30%",  textAlign:"center"}}>
         <Panel header={[props.item.product_name]}>
           <Card
-            style={{ textAlign:"center" , marginLeft:"24%",width: "300px"}}
+            style={{ textAlign:"center" , marginLeft:'25%', width: "300px"}}
             hoverable="true"
             title={`Seller:${seller[0].username}`}
             actions={[
