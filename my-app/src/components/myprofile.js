@@ -23,21 +23,16 @@ const MyListings = (props) => {
         console.log(err);
       });
   }, []);
-  const addItem = () => {
-    push("/add-item");
-  };
+  
 
   return (
     <div >
         <Layout className="backgroundgeneral"  style={{height:"100vh"}}>
-         <Space direction="horizontal" size="large">
+      
             
  
-      <h2 style={{marginLeft:"570px"}}> Welcome! </h2>
-      <Divider type="vertical"/>  <Button  onClick={addItem}>
-          Add Product
-        </Button>
-        </Space>
+     
+      
 
         <div className="space-align-container, backgroundgeneral">
       <div className="space-align-block">

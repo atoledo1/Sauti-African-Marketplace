@@ -4,7 +4,7 @@ import {useHistory} from "react-router-dom";
 import {PRODUCTS_PATH, USERS_PATH} from "../utils/URLs";
 import {UserContext} from "../App";
 
-import {Space, Button, Layout} from "antd";
+import {Space, Button, Layout, Divider} from "antd";
 
 import Listings from "./listing";
 
@@ -53,18 +53,18 @@ const Home = () => {
       });
   }, []);
 
-  const addItem = () => {
-    push("/add-item");
-  };
+  
 
   return (
     <Layout style={{height:"100vh"}} className="backgroundgeneral">
     <div style={{width: "100%", height: "100%"}}>
-      <Space direction="horizontal" size="large">
-        <h2 style={{marginLeft: "570px", marginRight: "40px"}}>
-          All Products <Button onClick={addItem}>Add new product</Button>
-        </h2>
-      </Space>
+
+            
+ 
+          
+           
+             
+      
       <div style={{width: "200vh"}}>
         {itemsForSale.map((item) => {
           return <Listings key={item.id} item={item} userList={userList} />;

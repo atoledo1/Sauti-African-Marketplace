@@ -12,7 +12,7 @@ function Navigation(props) {
     localStorage.removeItem("token");
     props.setLoggedIn(false);
   };
-
+  
   return (
       
        
@@ -23,13 +23,19 @@ function Navigation(props) {
           <>
           <Divider type="vertical"/>
             <Menu.Item>
-              <Link to="/home">Home</Link>
+              <Link to="/home">Market</Link>
             </Menu.Item>
             <Divider type="vertical"/>
+            
             <Menu.Item>
               <Link to="/mylistings"> Your Store </Link>
             </Menu.Item>
             <Divider type="vertical"/>
+            <Menu.Item>
+             <Link to="/add-item"> Add Product </Link>
+            </Menu.Item>
+           
+       
             <Menu.Item>
               <Link to="/login" onClick={logout}>
                 Log Out
