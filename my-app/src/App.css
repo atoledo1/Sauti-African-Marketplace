@@ -79,3 +79,22 @@
   color: #FCFAE9;
   font-size: large;
 }
+
+.ant-menu-item-disabled {
+  
+  cursor: default;
+}
+
+.bodytext{
+  color:#10174A;
+}
+
+.ant-form-item-label > label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  color: #10174A;;
+  font-size: 15px;
+  font-weight: bold;
+}

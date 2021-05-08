@@ -18,7 +18,7 @@ function Navigation(props) {
        
     <Menu     style={{ position: 'fixed', zIndex: 1, width: '100%', height:"65px" }} mode="horizontal"  className="primary">
       <>
-      <Menu.Item><h1>Sauti Marketplace</h1></Menu.Item>
+      <Menu.Item disabled="true"><h1>Sauti Marketplace</h1></Menu.Item>
         {props.loggedIn ? (
           <>
           <Divider type="vertical"/>
@@ -31,9 +31,7 @@ function Navigation(props) {
               <Link to="/mylistings"> Your Store </Link>
             </Menu.Item>
             <Divider type="vertical"/>
-            <Menu.Item >
-             <Link to="/add-item"> Add Product </Link>
-            </Menu.Item>
+           
            
        
             <Menu.Item>

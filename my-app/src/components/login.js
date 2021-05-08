@@ -45,7 +45,7 @@ function Login(props) {
   return (
     <div
       style={{
-        height: "680px",
+        height: "100vh",
         zIndex: "80",
         width: "100%",
         backgroundImage: `url(${sauti})`,
@@ -59,10 +59,10 @@ function Login(props) {
           backgroundColor: "#FCFAEA",
           zindex: "100",
           width: "750px",
-          height: "680px",
+          height: "100vh",
         }}
       >
-        <Form
+        <Form className="bodytext"
           style={{
             width: "300px",
             padding: "50px",

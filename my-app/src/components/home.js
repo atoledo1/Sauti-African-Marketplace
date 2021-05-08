@@ -53,12 +53,14 @@ const Home = () => {
       });
   }, []);
 
-  
+  const addItem = () => {
+    push("/add-item");
+  };
 
   return (
-    <Layout style={{height:"100vh"}} className="backgroundgeneral">
+    <Layout style={{minHeight:"100vh", height:"200vh"}} className="backgroundgeneral">
     <div style={{width: "100%", height: "100%"}}>
-
+    
             
  
           
@@ -66,9 +68,11 @@ const Home = () => {
              
       
       <div style={{width: "200vh"}}>
+      <Button onClick={addItem}>Add new product</Button>
         {itemsForSale.map((item) => {
           return <Listings key={item.id} item={item} userList={userList} />;
         })}
+        
       </div>
     </div>
     </Layout>

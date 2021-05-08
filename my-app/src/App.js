@@ -42,7 +42,7 @@ function App() {
          
 
 
-          <PrivateRoute  exact path="/add-item">
+          <PrivateRoute  path="/add-item">
             <AddItem />
           </PrivateRoute>
 

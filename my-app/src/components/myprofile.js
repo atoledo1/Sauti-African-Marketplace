@@ -24,7 +24,9 @@ const MyListings = (props) => {
       });
   }, []);
   
-
+  const addItem = () => {
+    push("/add-item");
+  };
   return (
     <div >
         <Layout className="backgroundgeneral"  style={{height:"100vh"}}>
@@ -34,13 +36,17 @@ const MyListings = (props) => {
      
       
 
-        <div className="space-align-container, backgroundgeneral" style={{ marginTop:"45px"}}>
-      <div className="space-align-block">
+        <div className="space-align-container, backgroundgeneral">
+      <div className="space-align-block" style={{paddingTop:"50px"}}>
         <Space align="center">
       
       {myitems.map((item) => (
-        <MyProducts key={item.id} item={item} />
+        <MyProducts  key={item.id} item={item} />
       ))}
+      
+      <Button  onClick={addItem}>
+          Add Product
+        </Button>
       </Space>
     </div>
     </div>

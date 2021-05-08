@@ -33,12 +33,12 @@ function Register() {
   };
 
   return (
-    <div style={{ height:"680px",zIndex:"80", width:"100%",backgroundImage:`url(${sauti})`,
+    <div style={{ height:"100vh",zIndex:"80", width:"100%",backgroundImage:`url(${sauti})`,
    backgroundSize: 'cover',
    backgroundPosition:"center",
   backgroundRepeat: 'no-repeat'}}>
 <div style={{backgroundColor:"#FCFAEA", zindex:"100",  width: '750px',
-        height: '680px',}}>
+        height: '100vh',}}>
 <div className="container">
     <Form style={{ width:"300px", padding:"50px", marginLeft:"200px", paddingTop:"200px"}} layout="horizontal">
       <Form.Item
