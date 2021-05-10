@@ -29,16 +29,16 @@ const MyListings = (props) => {
   };
   return (
     <div>
-      <Layout className="backgroundgeneral" style={{height: "100vh"}}>
-        <div className="space-align-container, backgroundgeneral">
+      <Layout className="backgroundgeneral" style={{height: "200vh"}}>
+        <div className="space-align-container, backgroundgeneral"  style={{marginTop: "40px"}}>
          
-          <div className="space-align-block" style={{paddingTop: "50px"}}>
+          <div className="space-align-block" style={{height: "190vh"}}>
           <PageHeader style={{marginLeft:"0%", textAlign:"center"}}>
             <h2> Current Products for Sale:</h2>
           <Button  type="primary" onClick={addItem}>Add New Product</Button>
           </PageHeader>
         
-            <Space align="center">
+            <Space  size="large" style={{marginLeft:"60px", marginTop:"25px"}} align="center" wrap>
               {myitems.map((item) => (
                 <MyProducts key={item.id} item={item} />
               ))}

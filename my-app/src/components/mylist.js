@@ -15,9 +15,9 @@ const MyProducts = (props) => {
 
 
   return (
-    <div className="space-align-container   backgroundgeneral" >
-      <div className="space-align-block" >
-        <Space align="center">
+    // <div className="space-align-container1   backgroundgeneral" style={{height:"150vh"}}>
+    //   <div className="space-align-block1"  >
+    //     <Space wrap>
           <Card className="backgroundelements"
             style={{width: "300px", textAlign:"center"}}
             hoverable="true"
@@ -36,9 +36,9 @@ const MyProducts = (props) => {
             <p>Market: {props.item.market_name}</p>
             <p>Location: {props.item.country}</p>
           </Card>
-        </Space>
-      </div>
-    </div>
+    //     </Space>
+    //   </div>
+    // </div>
   );
 };
 export default MyProducts;
