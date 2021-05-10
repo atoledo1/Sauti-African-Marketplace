@@ -29,10 +29,10 @@ const MyListings = (props) => {
   };
   return (
     <div>
-      <Layout className="backgroundgeneral" style={{height: "200vh"}}>
+      <Layout className="backgroundgeneral" style={{height: "160vh"}}>
         <div className="space-align-container, backgroundgeneral"  style={{marginTop: "40px"}}>
          
-          <div className="space-align-block" style={{height: "190vh"}}>
+          <div className="space-align-block" style={{height: "150vh"}}>
           <PageHeader style={{marginLeft:"0%", textAlign:"center"}}>
             <h2> Current Products for Sale:</h2>
           <Button  type="primary" onClick={addItem}>Add New Product</Button>

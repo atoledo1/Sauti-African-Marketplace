@@ -4,7 +4,7 @@ import {useHistory} from "react-router-dom";
 import {PRODUCTS_PATH, USERS_PATH} from "../utils/URLs";
 import {UserContext} from "../App";
 
-import {Space, Button, Layout, Divider} from "antd";
+import {Space, Button, Layout, PageHeader} from "antd";
 
 import Listings from "./listing";
 
@@ -57,21 +57,21 @@ const Home = () => {
 
   return (
     <Layout style={{minHeight:"100vh", height:"200vh"}} className="backgroundgeneral">
-    <div style={{width: "100%", height: "100%"}}>
+    <div style={{width: "100%", height: "100%", marginTop:"88px"}} className="backgroundgeneral">
     
             
  
-          
-           
-             
+    
+            <h2 style={{textAlign:"center"}}> All Products:</h2>
       
-      <div style={{width: "200vh"}}>
+
     
         {itemsForSale.map((item) => {
-          return <Listings key={item.id} item={item} userList={userList} />;
+          return   <Space  size="large" style={{marginLeft:"100px", marginTop:"60px"}} align="center" wrap>
+          <Listings key={item.id} item={item} userList={userList} /> </Space>
         })}
         
-      </div>
+     
     </div>
     </Layout>
   );

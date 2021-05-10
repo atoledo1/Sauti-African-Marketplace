@@ -23,7 +23,7 @@ const AddItem = () => {
 
   useEffect(() => {
     if (user.id === "") {
-      push("/home")
+      push("/mylistings")
     }
   }, []);
 
@@ -40,7 +40,7 @@ const AddItem = () => {
     axiosWithAuth()
       .post(`${NEW_ITEM_PATH}${user.id}`, formValues)
       .then((res) => {
-        push("/home");
+        push("/mylistings");
       })
       .catch((err) => console.log(err));
   };
