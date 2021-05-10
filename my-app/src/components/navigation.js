@@ -16,9 +16,12 @@ function Navigation(props) {
   return (
       
        
-    <Menu     style={{ position: 'fixed', zIndex: 1, width: '100%', height:"65px", backgroundColor:"#10174A" }}   mode="horizontal"  >
+    <Menu     style={{  display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around", position: 'fixed', zIndex: 1, width: '100%',  height:"74px", backgroundColor:"#10174A" }}   mode="horizontal"  >
       <>
       <Menu.Item disabled="true"><h1>Sauti Marketplace</h1></Menu.Item>
+  
         {props.loggedIn ? (
           <>
           <Divider type="vertical"/>
@@ -39,8 +42,11 @@ function Navigation(props) {
                 Log Out
               </Link>
             </Menu.Item>
+           
           </>
+          
         ) : (
+      
           <>
             <Menu.Item>
               <Link to="/register">Register</Link>
@@ -48,8 +54,11 @@ function Navigation(props) {
             <Menu.Item>
               <Link to="/login">Log In</Link>
             </Menu.Item>
+            
           </>
+          
         )}
+       
       </>
     </Menu>
  
