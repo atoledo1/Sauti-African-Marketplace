@@ -53,9 +53,7 @@ const Home = () => {
       });
   }, []);
 
-  const addItem = () => {
-    push("/add-item");
-  };
+
 
   return (
     <Layout style={{minHeight:"100vh", height:"200vh"}} className="backgroundgeneral">
@@ -68,7 +66,7 @@ const Home = () => {
              
       
       <div style={{width: "200vh"}}>
-      <Button type="primary"  onClick={addItem}>Add new product</Button>
+    
         {itemsForSale.map((item) => {
           return <Listings key={item.id} item={item} userList={userList} />;
         })}
