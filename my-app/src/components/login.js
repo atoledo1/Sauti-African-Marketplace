@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react";
 import {useHistory} from "react-router-dom";
+import Foto from "./foto"
 
 import axios from "axios";
 import {UserContext} from "../App";
@@ -43,25 +44,20 @@ function Login(props) {
     };
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        zIndex: "80",
-        width: "100%",
-        backgroundImage: `url(${sauti})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+   
+  
+    
       <div
         style={{
           backgroundColor: "#FCFAEA",
-          zindex: "100",
+          position:"fixed",
           width: "750px",
-          height: "100vh",
+          height: "100%",
+          
         }}
       >
+        
+        <Foto style={{marginLeft:"700px", objectFill:"cover"}}></Foto>
         <Form className="bodytext"
           style={{
             width: "300px",
@@ -117,8 +113,9 @@ function Login(props) {
             </Form.Item>
           </Space>
         </Form>
-      </div>
+      
     </div>
+    
   );
 }
 export default Login;

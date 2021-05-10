@@ -18,7 +18,7 @@ const MyProducts = (props) => {
     // <div className="space-align-container1   backgroundgeneral" style={{height:"150vh"}}>
     //   <div className="space-align-block1"  >
     //     <Space wrap>
-          <Card className="backgroundelements"
+          <Card className="backgroundelements bodytext"
             style={{width: "300px", textAlign:"center"}}
             hoverable="true"
             bordered="false"

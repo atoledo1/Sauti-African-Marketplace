@@ -7,7 +7,7 @@ import {BASE_URL, REGISTER_PATH} from "../utils/URLs";
 
 import {UserOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
 import {Form, Input, Button, Space} from "antd";
-import sauti from "../images/sauti.png"
+import Foto from "./foto"
 const initialForm = {
   email: "",
   username: "",
@@ -32,13 +32,20 @@ function Register() {
   };
 
   return (
-    <div style={{ height:"100vh",zIndex:"80", width:"100%",backgroundImage:`url(${sauti})`,
-   backgroundSize: 'cover',
-   backgroundPosition:"center",
-  backgroundRepeat: 'no-repeat'}}>
+    <div
+    style={{
+      backgroundColor: "#FCFAEA",
+      position:"fixed",
+      width: "750px",
+      height: "100%",
+      
+    }}
+  >
+    
 <div style={{backgroundColor:"#FCFAEA", zindex:"100",  width: '750px',
         height: '100vh',}}>
 <div className="container">
+<Foto style={{marginLeft:"700px", objectFill:"cover"}}></Foto>
     <Form style={{ width:"300px", padding:"50px", marginLeft:"200px", paddingTop:"200px"}} layout="vertical">
       <Form.Item
         rules={[
