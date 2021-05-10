@@ -3,7 +3,7 @@ import {axiosWithAuth} from "../utils/axiosWIthAUTH";
 import {NEW_ITEM_PATH} from "../utils/URLs";
 import {useHistory} from "react-router-dom";
 import {UserContext} from "../App";
-import {Button, Form, Input, Layout} from "antd";
+import {Button, Form, Input, Layout, Space} from "antd";
 
 const AddItem = () => {
   const initialFormValues = {
@@ -23,7 +23,7 @@ const AddItem = () => {
 
   useEffect(() => {
     if (user.id === "") {
-      push("/mylistings")
+      push("/add-item")
     }
   }, []);
 
@@ -51,14 +51,15 @@ const AddItem = () => {
         className="backgroundgeneral"
         style={{width: "100%", height: "100vh"}}
       >
-        <div class="container" className="backgroundgeneral">
+        <div class="container" style={{marginTop:"90px"}} className="backgroundgeneral">
           <Form
             onFinish={onSubmit}
-            style={{width: "50%", marginTop: "100px", marginLeft: "25%"}}
-            layout="horizontal"
+            style={{width: "25%", height:"650px", marginTop:"px", marginLeft: "39%"}}
+            layout="vertical"
           >
+            <Space  style={{ marginTop:"30px"}}size="small" direction="horizontal" wrap>
             <Form.Item
-              label="Product"
+              label="Product:"
               rules={[
                 {required: true, message: "Please input the product's name"},
               ]}
@@ -71,7 +72,7 @@ const AddItem = () => {
               />
             </Form.Item>
             <Form.Item
-              label="Category"
+              label="Category:"
               rules={[
                 {
                   required: true,
@@ -88,7 +89,7 @@ const AddItem = () => {
             </Form.Item>
 
             <Form.Item
-              label="Description"
+              label="Description:"
               rules={[
                 {
                   required: true,
@@ -104,7 +105,7 @@ const AddItem = () => {
               />
             </Form.Item>
             <Form.Item
-              label="Quantity"
+              label="Quantity:"
               rules={[
                 {
                   required: true,
@@ -121,7 +122,7 @@ const AddItem = () => {
             </Form.Item>
 
             <Form.Item
-              label="Price"
+              label="Price:"
               rules={[
                 {required: true, message: "Please input the product's price"},
               ]}
@@ -135,7 +136,7 @@ const AddItem = () => {
             </Form.Item>
 
             <Form.Item
-              label="Location"
+              label="Location:"
               rules={[{required: true, message: "Please input the country"}]}
             >
               <Input
@@ -147,7 +148,7 @@ const AddItem = () => {
             </Form.Item>
 
             <Form.Item
-              label="Market"
+              label="Market:"
               rules={[
                 {required: true, message: "Please input the market's name"},
               ]}
@@ -161,10 +162,11 @@ const AddItem = () => {
             </Form.Item>
 
             <Form.Item>
-              <Button  type="primary"    style={{marginleft: "30px"}} htmlType="submit">
+              <Button  type="primary" size="large" style={{marginTop:"29px", marginLeft:"50px"}} htmlType="submit">
                 Save
               </Button>
             </Form.Item>
+            </Space>
           </Form>
         </div>
       </div>

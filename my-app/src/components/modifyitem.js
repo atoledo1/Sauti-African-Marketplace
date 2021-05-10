@@ -60,8 +60,9 @@ const ModifyItem = () => {
     <div  className="backgroundgeneral" style={{width:"100%", height:"100vh"}}>
      
       <div class="container" className="backgroundgeneral" >
-        <Form style={{width: "30%",  marginTop:"100px", marginLeft: "40%"}} layout="horizontal">
-          <Form.Item label="Product">
+        <Form style={{width: "30%",  marginTop:"100px", marginLeft: "40%"}} layout="vertical">
+        <Space  style={{ marginTop:"30px"}}size="small" direction="horizontal" wrap>
+          <Form.Item label="Product:">
             <Input
               type="text"
               name="product_name"
@@ -69,7 +70,7 @@ const ModifyItem = () => {
               onChange={onChange}
             />
           </Form.Item>
-          <Form.Item label="Price">
+          <Form.Item label="Price:">
             <Input
               type="text"
               name="product_price"
@@ -77,7 +78,7 @@ const ModifyItem = () => {
               onChange={onChange}
             />
           </Form.Item>
-          <Form.Item label="Quantity">
+          <Form.Item label="Quantity:">
             <Input
               type="text"
               name="product_quantity"
@@ -85,7 +86,7 @@ const ModifyItem = () => {
               onChange={onChange}
             />
           </Form.Item>
-          <Form.Item label="Category">
+          <Form.Item label="Category:">
             <Input
               type="text"
               name="product_category"
@@ -94,7 +95,7 @@ const ModifyItem = () => {
             />
           </Form.Item>
 
-          <Form.Item label="Location">
+          <Form.Item label="Location:">
             <Input
               type="text"
               name="country"
@@ -103,7 +104,7 @@ const ModifyItem = () => {
             />
           </Form.Item>
 
-          <Form.Item label="Market">
+          <Form.Item label="Market:">
             <Input
               type="text"
               name="market_name"
@@ -111,7 +112,7 @@ const ModifyItem = () => {
               onChange={onChange}
             />
           </Form.Item>
-          <Form.Item label="Description">
+          <Form.Item label="Description:">
             <Input
               type="text"
               name="product_description"
@@ -119,20 +120,21 @@ const ModifyItem = () => {
               onChange={onChange}
             />
           </Form.Item>
-          <div style={{display:"flex"}}>
-            <Space size="medium">
+         
+            
           <Form.Item>
-            <Button onClick={editListing} htmlType="submit">
-              Save Changes
+            <Button  type="primary" style={{marginTop:"29px", marginLeft:"10px"}}onClick={editListing} htmlType="submit">
+              Save
             </Button>
           </Form.Item>
           <Form.Item>
-            <Button  type="primary" onClick={deleteListing} htmlType="submit">
-              Delete Product
+            <Button style={{marginTop:"29px"}} type="primary" onClick={deleteListing} htmlType="submit">
+              Delete
             </Button>
           </Form.Item>
+   
+     
           </Space>
-          </div>
         </Form>
       </div>
     </div>

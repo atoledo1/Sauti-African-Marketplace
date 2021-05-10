@@ -39,7 +39,7 @@ function Register() {
 <div style={{backgroundColor:"#FCFAEA", zindex:"100",  width: '750px',
         height: '100vh',}}>
 <div className="container">
-    <Form style={{ width:"300px", padding:"50px", marginLeft:"200px", paddingTop:"200px"}} layout="horizontal">
+    <Form style={{ width:"300px", padding:"50px", marginLeft:"200px", paddingTop:"200px"}} layout="vertical">
       <Form.Item
         rules={[
           {
@@ -47,7 +47,7 @@ function Register() {
             message: "Please input your E-mail!",
           },
         ]}
-        label="Email"
+        label="Email:"
       >
         <Input
           id="mail"
@@ -66,7 +66,7 @@ function Register() {
             message: "Please input your username!",
           },
         ]}
-        label="Username"
+        label="Username:"
       >
         <Input
           id="name"
@@ -85,7 +85,7 @@ function Register() {
             message: "Please input your password!",
           },
         ]}
-        label="Password"
+        label="Password:"
       >
         <Input.Password
           id="pass"

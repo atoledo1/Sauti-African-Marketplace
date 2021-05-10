@@ -69,7 +69,7 @@ function Login(props) {
             marginLeft: "200px",
             paddingTop: "200px",
           }}
-          layout="horizontal"
+          layout="vertical"
           name="login"
           className="login-form"
           initialValues={{remember: true}}
@@ -77,7 +77,7 @@ function Login(props) {
         >
           <Form.Item
             rules={[{required: true, message: "Please input your Username!"}]}
-            label="Username"
+            label="Username:"
           >
             <Input
               prefix={<UserOutlined className="site-form-item-icon" />}
@@ -91,7 +91,7 @@ function Login(props) {
 
           <Form.Item
             rules={[{required: true, message: "Please input your Password!"}]}
-            label="Password"
+            label="Password:"
           >
             <Input.Password
               prefix={<LockOutlined className="site-form-item-icon" />}
