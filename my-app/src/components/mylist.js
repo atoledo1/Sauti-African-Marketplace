@@ -21,10 +21,11 @@ const MyProducts = (props) => {
           <Card className="backgroundelements"
             style={{width: "300px", textAlign:"center"}}
             hoverable="true"
+            bordered="false"
             title={props.item.product_name}
             actions={[
               user.id === props.item.user_id && (
-                <Button  className="primary" onClick={modifyItem}>Edit</Button>
+                <Button  type="primary"  onClick={modifyItem}>Edit</Button>
               ),
             ]}
           >

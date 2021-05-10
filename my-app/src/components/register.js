@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
-import * as yup from "yup";
-import registerSchema from "../RegisterShema";
+
 import axios from "axios";
 import {BASE_URL, REGISTER_PATH} from "../utils/URLs";
-import "../App.css";
+
 
 import {UserOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
 import {Form, Input, Button, Space} from "antd";
@@ -98,7 +97,7 @@ function Register() {
         />
       </Form.Item>
       <Form.Item>
-        <Button className="primary" htmlType="submit">
+        <Button type="primary"  htmlType="submit">
           Register
         </Button>
       </Form.Item>

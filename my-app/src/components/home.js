@@ -68,7 +68,7 @@ const Home = () => {
              
       
       <div style={{width: "200vh"}}>
-      <Button onClick={addItem}>Add new product</Button>
+      <Button type="primary"  onClick={addItem}>Add new product</Button>
         {itemsForSale.map((item) => {
           return <Listings key={item.id} item={item} userList={userList} />;
         })}

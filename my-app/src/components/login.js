@@ -5,7 +5,7 @@ import axios from "axios";
 import {UserContext} from "../App";
 import {BASE_URL, LOGIN_PATH} from "../utils/URLs";
 
-import "../App.css";
+
 import {Form, Input, Button, Checkbox, Space} from "antd";
 import {UserOutlined, LockOutlined} from "@ant-design/icons";
 import sauti from "../images/sauti.png";
@@ -109,7 +109,7 @@ function Login(props) {
             <Form.Item>
               <Button
                 
-                className="primary"
+                type="primary"
                 htmlType="submit"
               >
                 Log in

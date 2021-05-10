@@ -161,7 +161,7 @@ const AddItem = () => {
             </Form.Item>
 
             <Form.Item>
-              <Button style={{marginleft: "30px"}} htmlType="submit">
+              <Button  type="primary"    style={{marginleft: "30px"}} htmlType="submit">
                 Save
               </Button>
             </Form.Item>

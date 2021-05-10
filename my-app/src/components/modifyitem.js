@@ -127,7 +127,7 @@ const ModifyItem = () => {
             </Button>
           </Form.Item>
           <Form.Item>
-            <Button onClick={deleteListing} htmlType="submit">
+            <Button  type="primary" onClick={deleteListing} htmlType="submit">
               Delete Product
             </Button>
           </Form.Item>

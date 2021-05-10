@@ -27,12 +27,13 @@ const Listings = (props) => {
           <Card className="backgroundelements"
             style={{ textAlign:"center" , width: "300px"}}
             hoverable="true"
+            bordered="false"
             title={`Seller:${seller[0].username}`}
             actions={[
               user.id === props.item.user_id ? (
-                <Button  className="primary"onClick={modifyItem}>Edit</Button>
+                <Button   type="primary" onClick={modifyItem}>Edit</Button>
               ) : (
-                <Button className="primary">Buy</Button>
+                <Button type="primary" >Buy</Button>
               ),
             ]}
           >
