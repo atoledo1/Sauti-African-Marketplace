@@ -22,7 +22,7 @@ const Listings = (props) => {
   return (
   
 
-      <Collapse bordered={false} accordion={true} expandIcon={({ isActive }) =>(isActive) ? <MinusSquareOutlined/> : <PlusSquareOutlined /> } expandIconPosition="right"  style={{width:"330px",   textAlign:"center", }}>
+      <Collapse bordered={false} accordion={true} expandIcon={({ isActive }) =>(isActive) ? <MinusSquareOutlined/> : <PlusSquareOutlined /> } expandIconPosition="right"  style={{width:"330px", marginBottom:"7px",  textAlign:"center", }}>
         <Panel className="backgroundelements"header={[props.item.product_name]}>
           <Card className="backgroundelements"
             style={{ textAlign:"center" , width: "300px"}}

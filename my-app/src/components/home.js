@@ -57,7 +57,7 @@ const Home = () => {
 
   return (
     <Layout style={{minHeight:"100vh", height:"200vh"}} className="backgroundgeneral">
-    <div style={{width: "100%", height: "100%", marginTop:"88px"}} className="backgroundgeneral">
+    <div style={{width: "100%", height: "100%", marginTop:"99px"}} className="backgroundgeneral">
     
             
  
@@ -67,7 +67,7 @@ const Home = () => {
 
     
         {itemsForSale.map((item) => {
-          return   <Space  size="large" style={{marginLeft:"100px", marginTop:"60px"}} align="center" wrap>
+          return   <Space  size="large" style={{marginLeft:"100px", marginTop:"30px"}} align="center" wrap>
           <Listings key={item.id} item={item} userList={userList} /> </Space>
         })}
         

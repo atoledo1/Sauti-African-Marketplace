@@ -34,7 +34,7 @@ const MyListings = (props) => {
          
           <div className="space-align-block" style={{height: "150vh"}}>
           <PageHeader style={{marginLeft:"0%", textAlign:"center"}}>
-            <h2> Current Products for Sale:</h2>
+            <h2> Current Products:</h2>
           <Button  type="primary" onClick={addItem}>Add New Product</Button>
           </PageHeader>
         
