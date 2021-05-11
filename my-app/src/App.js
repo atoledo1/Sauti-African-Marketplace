@@ -7,13 +7,11 @@ import AddItem from "./components/additem";
 import ModifyItem from "./components/modifyitem";
 import PrivateRoute from "./components/privateroute";
 
-import './App.less';
+import "./App.less";
 
 import MyListings from "./components/myprofile";
 import Home from "./components/home";
 import Navigation from "./components/navigation";
-
-
 
 export const UserContext = React.createContext();
 
@@ -28,9 +26,7 @@ function App() {
   return (
     <UserContext.Provider value={{user, setUser}}>
       <div className="App">
-        
-
-        <Navigation  loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Switch>
           <Route path="/login">
             <Login setLoggedIn={setLoggedIn} />
@@ -39,10 +35,8 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
-         
 
-
-          <PrivateRoute  path="/add-item">
+          <PrivateRoute path="/add-item">
             <AddItem />
           </PrivateRoute>
 

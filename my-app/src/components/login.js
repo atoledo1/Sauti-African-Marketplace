@@ -104,7 +104,7 @@ function Login(props) {
             </Form.Item>
             <Form.Item>
               <Button
-                
+                size="large"
                 type="primary"
                 htmlType="submit"
               >

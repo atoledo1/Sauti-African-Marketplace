@@ -3,7 +3,7 @@ import sauti from "../images/sauti.svg";
 
 function Foto() {
     return (
-      <Image
+      <Image id="primera"
       preview={false}
       
         width="850px"
