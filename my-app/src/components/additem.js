@@ -47,14 +47,14 @@ const AddItem = () => {
 
   return (
     <Layout>
-      <div
-        className="backgroundgeneral"
-        style={{width: "100%", height: "100vh"}}
-      >
-        <div class="container" style={{marginTop:"90px"}} className="backgroundgeneral">
+    <div  className="backgroundgeneral" style={{width:"100%", height:"100vh"}}>
+     
+      <div class="container" className="backgroundgeneral" >
+ 
+    
           <Form
             onFinish={onSubmit}
-            style={{width: "25%", height:"650px", marginTop:"px", marginLeft: "39%"}}
+            style={{width: "30%",  marginTop:"100px", marginLeft: "40%"}}
             layout="vertical"
           >
             <Space  style={{ marginTop:"30px"}}size="small" direction="horizontal" wrap>
