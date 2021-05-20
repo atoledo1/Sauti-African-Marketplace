@@ -2,14 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Rakkas&display=swap');
 html {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Canela Text',
-    sans-serif,'Nunito', sans-serif; 
+  font-family: 'Nunito', sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
