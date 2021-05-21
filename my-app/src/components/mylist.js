@@ -18,16 +18,12 @@ const MyProducts = (props) => {
     // <div className="space-align-container1   backgroundgeneral" style={{height:"150vh"}}>
     //   <div className="space-align-block1"  >
     //     <Space wrap>
-          <Card className="backgroundelements bodytext"
+          <Card  id="tarjeta"className=" bodytext"
             style={{width: "300px", textAlign:"center"}}
             hoverable="true"
             bordered="false"
             title={props.item.product_name}
-            actions={[
-              user.id === props.item.user_id && (
-                <Button  type="primary"  onClick={modifyItem}>Edit</Button>
-              ),
-            ]}
+           
           >
             <p>Price: {props.item.product_price}</p>
             <p>Quantity: {props.item.product_quantity}</p>
@@ -35,6 +31,10 @@ const MyProducts = (props) => {
             <p>Description: {props.item.product_description}</p>
             <p>Market: {props.item.market_name}</p>
             <p>Location: {props.item.country}</p>
+            <br></br>
+            <p>    {user.id === props.item.user_id && (
+              <Button  type="primary"  onClick={modifyItem}>Edit</Button>
+            )}                       </p>
           </Card>
     //     </Space>
     //   </div>

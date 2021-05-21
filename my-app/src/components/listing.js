@@ -23,19 +23,15 @@ const Listings = (props) => {
   
 
       <Collapse bordered={false} accordion={true} expandIcon={({ isActive }) =>(isActive) ? <MinusSquareOutlined/> : <PlusSquareOutlined /> } expandIconPosition="right"  style={{width:"330px", marginBottom:"7px",  textAlign:"center", }}>
-        <Panel className="backgroundelements"header={[props.item.product_name]}>
-          <Card className="backgroundelements"
-            style={{ textAlign:"center" , width: "300px"}}
+        <Panel className=""header={[props.item.product_name]}>
+          <Card className="tarjeta"
+            style={{ textAlign:"center" ,  
+            
+            width: "300px"}}
             hoverable="true"
             bordered="false"
-            title={`Seller:${seller[0].username}`}
-            actions={[
-              user.id === props.item.user_id ? (
-                <Button   type="primary" onClick={modifyItem}>Edit</Button>
-              ) : (
-                <Button type="primary" >Buy</Button>
-              ),
-            ]}
+            title={`Seller: ${seller[0].username}`}
+         
           >
             <p>{`Price: ${props.item.product_price}`}</p>
             <p>{`Quantity: ${props.item.product_quantity}`}</p>
@@ -43,6 +39,14 @@ const Listings = (props) => {
             <p> {`Market: ${props.item.market_name}`}</p>
             <p> {`Category: ${props.item.product_category}`} </p>
             <p> {`Description: ${props.item.product_description}`}</p>
+            <br></br>
+            <p>                {[
+              user.id === props.item.user_id ? (
+                <Button   type="primary" onClick={modifyItem}>Edit</Button>
+              ) : (
+                <Button type="primary" >Buy</Button>
+              ),
+            ]}</p>
           </Card>
         </Panel>
       </Collapse>
